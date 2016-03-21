@@ -19,7 +19,7 @@ Distance = Distance - 2.5
   local Base=workspace.Base
   local CF=Base.CFrame
   local Y=CF.Y
-  woah.CFrame = CFrame.new(X,Y+(Distance/2)-2.5,Z)
+  woah.CFrame = CFrame.new(X,Y+(Distance/2),Z)
 
     game.Debris:AddItem(woah,2)
 
