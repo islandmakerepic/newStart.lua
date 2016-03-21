@@ -16,18 +16,19 @@ Distance = Distance - 2.5
   woah.Anchored = true
   woah.CFrame = Character.Torso.CFrame
   woah.CFrame = woah.CFrame* CFrame.new(0,-(Distance/2),0)* CFrame.new(0,-2.5,0)
-    game.Debris:AddItem(woah,1)
+    game.Debris:AddItem(woah,2)
 
   local crap = Instance.new("Part",workspace)
   crap.CanCollide = false
   crap.Anchored = true
-  crap.Size = Vector3.new(10,10,10)
+  crap.Size = Vector3.new(5,5,5)
   crap.BrickColor = BrickColor.White()
   crap.Material = 'Neon'
-crap.CFrame = Character.Torso.CFrame
-*CFrame.new(0,0,40)
+crap.CFrame = woah.CFrame
+*CFrame.new(0,0,15)
 *CFrame.Angles(math.rad(GetRandom()),math.rad(GetRandom()),math.rad(GetRandom()))
-    game.Debris:AddItem(crap,1.25)
+  Instance.new("Fire",crap)
+    game.Debris:AddItem(crap,2.25)
       Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-2.5)
 end
 
