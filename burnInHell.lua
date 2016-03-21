@@ -20,7 +20,7 @@ local Fly = function(Direction)
   crap.Material = 'Neon'
   crap.CFrame = Character.Torso.CFrame*CFrame.new(0,0,10)
     game.Debris:AddItem(crap,2)
-      Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)
+      Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-3)
 end
 
 local KeysHeld = {}
