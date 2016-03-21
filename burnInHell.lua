@@ -29,7 +29,7 @@ Distance = Distance - 2.5
   local Extend = woah:clone()
   Extend.Parent = woah
   Extend.Size = Vector3.new(15,woah.Size.Y>15 and 15 or woah.Size.Y,dist)
-  local nCF=CFrame.new(X,-(Extend.Size.Y/2),Z)
+  local nCF=CFrame.new(X,-(Extend.Size.Y),Z)
   Extend.CFrame = CFrame.new(Cframe.p,nCF.p)*CFrame.new(0,0,-(dist/2))
   end
   local Base=workspace.Base
