@@ -25,11 +25,11 @@ end
 
 local KeysHeld = {}
 
-m.KeyDown:connect(function(Key)
+Mouse.KeyDown:connect(function(Key)
   KeysHeld[Key] = true
 end)
 
-m.KeyUp:connect(function(Key)
+Mouse.KeyUp:connect(function(Key)
   KeysHeld[Key] = false
 end)
 
