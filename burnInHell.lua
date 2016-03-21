@@ -5,11 +5,11 @@ local Mouse = Player:GetMouse()
 local Fly = function(Direction)
   local woah = Instance.new("Part",workspace)
   woah.Size = Vector3.new(15,1,15)
-  woah.BrickColor = BrickColor.New'Toothpaste'
-  woah.Material = 'Neon'
+  woah.BrickColor = BrickColor.New'Dark green'
+  woah.Material = 'Grass'
   woah.Anchored = true
   woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-(2.5),0)
-    game.Debris:AddItem(woah,0.5)
+    game.Debris:AddItem(woah,0.25)
 
   local crap = Instance.new("Part",workspace)
   crap.CanCollide = false
@@ -19,7 +19,7 @@ local Fly = function(Direction)
   crap.BrickColor = BrickColor.White()
   crap.Material = 'Neon'
   crap.CFrame = Character.Torso.CFrame*CFrame.new(0,0,10)
-    game.Debris:AddItem(crap,1)
+    game.Debris:AddItem(crap,0.5)
       Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-3)
 end
 
