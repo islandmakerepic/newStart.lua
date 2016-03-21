@@ -8,7 +8,7 @@ local Fly = function(Direction)
   woah.BrickColor = workspace.Base.BrickColor
   woah.Material = 'Grass'
   woah.Anchored = true
-  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-(8),0)
+  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-5.5,0)
     game.Debris:AddItem(woah,0.25)
 
   local crap = Instance.new("Part",workspace)
