@@ -23,13 +23,14 @@ Distance = Distance - 2.5
   woah.Anchored = true
   local CFrameA=Character.Torso.CFrame
   local X, Z = CFrameA.X, CFrameA.Z
+  
   if Z<minZ or Z>maxZ or X>maxX or X<minX then
   local DistanceZ = Z-Cframe.Z
   DistanceZ = DistanceZ-Size.Z/2
   local Extend = woah:clone()
   Extend.Parent = woah
   Extend.Size = Vector3.new(15,woah.Size.Y>15 and 15 or woah.Size.Y,DistanceZ)
-  local NxtCF = CFrame.new(CFrameA.X,Extend.Size.Y/2,CFrameA.Z)
+  local NxtCF = CFrame.new(X,0,Z)
   Extend.CFrame = CFrame.new(NxtCF.p,Cframe.p)*CFrame.new(0,0,-(Extend.Size.Z/2))
   end
   local Base=workspace.Base
