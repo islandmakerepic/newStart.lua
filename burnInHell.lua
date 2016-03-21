@@ -8,8 +8,8 @@ local Fly = function(Direction)
   woah.BrickColor = workspace.Base.BrickColor
   woah.Material = 'Grass'
   woah.Anchored = true
-  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-5.5,0)
-    game.Debris:AddItem(woah,0.25)
+  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-6,0)
+    game.Debris:AddItem(woah,0.4)
 
   local crap = Instance.new("Part",workspace)
   crap.CanCollide = false
@@ -18,9 +18,9 @@ local Fly = function(Direction)
   crap.Size = Vector3.new(10,10,10)
   crap.BrickColor = BrickColor.White()
   crap.Material = 'Neon'
-  crap.CFrame = Character.Torso.CFrame*CFrame.new(0,0,10)
-    game.Debris:AddItem(crap,0.5)
-      Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-3)
+  crap.CFrame = Character.Torso.CFrame*CFrame.new(0,0,15)
+    game.Debris:AddItem(crap,0.7)
+      Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-5)
 end
 
 local KeysHeld = {}
