@@ -30,7 +30,7 @@ Distance = Distance - 2.5
   Extend.Parent = woah
   Extend.Size = Vector3.new(15,woah.Size.Y>5 and 5 or woah.Size.Y,DistanceZ)
   local NxtCF = woah.CFrame*CFrame.new(0,-(Distance-5),0)
-  Extend.CFrame = CFrame.new(nxtCF.p,Cframe.p)*CFrame.new(0,0,-(DistanceZ/2))
+  Extend.CFrame = CFrame.new(NxtCF.p,Cframe.p)*CFrame.new(0,0,-(DistanceZ/2))
   end
   local Base=workspace.Base
   local CF=Base.CFrame
