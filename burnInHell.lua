@@ -21,11 +21,10 @@ Distance = Distance - 2.5
   local crap = Instance.new("Part",workspace)
   crap.CanCollide = false
   crap.Anchored = true
-  crap.Size = Vector3.new(5,5,5)
+  crap.Size = Vector3.new(7.5,7.5,7.5)
   crap.BrickColor = BrickColor.White()
   crap.Material = 'Neon'
-crap.CFrame = woah.CFrame
-*CFrame.new(0,0,15)
+crap.CFrame = CFrame.new(woah.CFrame.X,3,woah.CFrame.Z)
 *CFrame.Angles(math.rad(GetRandom()),math.rad(GetRandom()),math.rad(GetRandom()))
   Instance.new("Fire",crap)
     game.Debris:AddItem(crap,2.25)
