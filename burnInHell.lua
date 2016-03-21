@@ -4,7 +4,14 @@ local Mouse = Player:GetMouse()
 
 local GetRandom=function()
   return math.random(-360,360)
-  end
+end
+local Cframe = workspace.Base.CFrame
+local Size=workspace.Base.Size
+local maxX=Cframe.X+Size.X/2
+local minX=Cframe.X-Size.X/2
+
+local maxZ=Cframe.Z+Size.Z/2
+local minZ=Cframe.Z-Size.Z/2
 
 local Fly = function(Direction)
 local Distance = (Character.Torso.CFrame.Y-workspace.Base.CFrame.Y)
@@ -16,9 +23,18 @@ Distance = Distance - 2.5
   woah.Anchored = true
   local CFrameA=Character.Torso.CFrame
   local X, Z = CFrameA.X, CFrameA.Z
+  if Z<minZ or Z>maxZ or X>maxX or X<minX then
+  local DistanceZ = Z-Cframe.Z
+  DistanceZ = DistanceZ-Size.Z/2
+  local Extend = woah:clone()
+  Extend.Parent = woah
+  Extend.Size = Vector3.new(15,woah.Size.Y>5 and 5 or woah.Size.Y,DistanceZ)
+  local NxtCF = woah.CFrame*CFrame.new(0,-(Distance-5),0)
+  Extend.CFrame = CFrame.new(nxtCF,Cframe)*CFrame.new(0,0,-(DistanceZ/2))
+  end
   local Base=workspace.Base
   local CF=Base.CFrame
-  local Y=CF.Y
+  local Y = CF.Y
   woah.CFrame = CFrame.new(X,Y+(Distance/2),Z)
 
     game.Debris:AddItem(woah,2)
