@@ -25,7 +25,7 @@ Distance = Distance - 2.5
   local X, Z = CFrameA.X, CFrameA.Z
   
   if Z<minZ or Z>maxZ or X>maxX or X<minX then
-  local DistanceZ = Z-Cframe.Z
+  local DistanceZ = Z
   DistanceZ = DistanceZ-Size.Z/2
   local Extend = woah:clone()
   Extend.Parent = woah
