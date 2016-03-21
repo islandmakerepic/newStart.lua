@@ -9,7 +9,7 @@ local Fly = function(Direction)
   woah.Material = 'Neon'
   woah.Anchored = true
   woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-(2.5),0)
-    game.Debris:AddItem(woah,1)
+    game.Debris:AddItem(woah,0.5)
 
   local crap = Instance.new("Part",workspace)
   crap.CanCollide = false
@@ -19,7 +19,7 @@ local Fly = function(Direction)
   crap.BrickColor = BrickColor.White()
   crap.Material = 'Neon'
   crap.CFrame = Character.Torso.CFrame*CFrame.new(0,0,10)
-    game.Debris:AddItem(crap,2)
+    game.Debris:AddItem(crap,1)
       Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-3)
 end
 
