@@ -11,7 +11,7 @@ Distance = Distance - 2.5
   woah.Material = 'Grass'
   woah.Anchored = true
   woah.CFrame = Character.Torso.CFrame
-  woah.CFrame = woah.CFrame* CFrame.new(0,-(Distance/2),0)
+  woah.CFrame = woah.CFrame* CFrame.new(0,-(Distance/2),0)* CFrame.new(0,-2.5,0)
     game.Debris:AddItem(woah,0.4)
 
   local crap = Instance.new("Part",workspace)
