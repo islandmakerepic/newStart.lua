@@ -4,11 +4,11 @@ local Mouse = Player:GetMouse()
 
 local Fly = function(Direction)
   local woah = Instance.new("Part",workspace)
-  woah.Size = Vector3.new(15,1,15)
-  woah.BrickColor = BrickColor.New'Dark green'
+  woah.Size = Vector3.new(15,5,15)
+  woah.BrickColor = workspace.Base.BrickColor
   woah.Material = 'Grass'
   woah.Anchored = true
-  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-(2.5),0)
+  woah.CFrame = Character.Torso.CFrame*CFrame.new(0,-(8),0)
     game.Debris:AddItem(woah,0.25)
 
   local crap = Instance.new("Part",workspace)
