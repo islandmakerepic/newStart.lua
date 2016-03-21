@@ -14,8 +14,13 @@ Distance = Distance - 2.5
   woah.BrickColor = workspace.Base.BrickColor
   woah.Material = 'Grass'
   woah.Anchored = true
-  woah.CFrame = Character.Torso.CFrame
-  woah.CFrame = woah.CFrame* CFrame.new(0,-(Distance/2),0)* CFrame.new(0,-2.5,0)
+  local CFrameA=Character.Torso.CFrame
+  local X, Z = CFrameA.X, CFrameA.Z
+  local Base=workspace.Base
+  local CF=Base.CFrame
+  local Y=CF.Y
+  woah.CFrame = CFrame.new(X,Y+(Distance/2)-2.5,Z)
+
     game.Debris:AddItem(woah,2)
 
   local crap = Instance.new("Part",workspace)
