@@ -53,6 +53,9 @@ while wait(0) do
   end
   if Pressed['x'] then
     Mode=Modes[2]
+  end
+  if Pressed['v'] then
+    Mode=Modes[3]
     end
   if not Teleporting then
     if Click and Mode==Modes[1] then
@@ -109,5 +112,22 @@ if Mode==Modes[2] then
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
+end
+if Mode==Modes[3] and Click then
+  User.Humanoid.WalkSpeed=100
+  local sp=User.Torso.CFrame
+  wait(0)
+  local spp=User.Torso.CFrame
+  if (sp.p-spp.p).magnitude>2 then
+    local d=(sp.p-spp.p).magnitude
+    for i=0,d,0.5 do
+    local cl=Glitch:clone()
+    cl.Parent=workspace
+    cl.Torso.CFrame=sp*CFrame.new(0,0,-i)
+    if math.random(3)==1 then
+      cl.Torso.CFrame=cl.Torso.CFrame*CFrame.new(math.random(-6,6),0,0)
+      end
+    end
   end
+end
 end
