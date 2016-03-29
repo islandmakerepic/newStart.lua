@@ -26,7 +26,8 @@ local Mode = Modes[1]
 local Pressed = {}
 
 Cursor.KeyDown:connect(function(Key)
-Pressed[Key] = not Pressed[Key]
+  if Pressed[Key] then Pressed[Key]=false else
+Pressed[Key] = true end
 end)
 
 
