@@ -93,7 +93,7 @@ if Mode==Modes[2] then
       game.Debris:AddItem(tf,math.random(1,20)/7)
       tf.Torso.Anchored=true
       tf.Torso.Touched:connect(function(h)
-        if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base"}) then
+        if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
           local cf=h.CFrame
           h:Destroy()
