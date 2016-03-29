@@ -83,8 +83,8 @@ if Mode==Modes[2] then
       local tf=Glitch:Clone()
       tf.Parent=workspace
       tf.Torso.CFrame=User.Torso.CFrame
-      *CFrame.new(math.random(-25,25),math.random(-10,10),math.random(-20,35))
-      *CFrame.new(0,0,-3)
+      *CFrame.new(math.random(-15,10),math.random(-10,10),math.random(-15,25))
+      *CFrame.new(0,0,1)
       game.Debris:AddItem(tf,math.random(1,20)/7)
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
