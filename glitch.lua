@@ -47,14 +47,14 @@ while wait(0) do
     User.Torso.CFrame=dir
     local dist=(spot.p-dir.p).magnitude
     for i=1,dist,3 do
-    User.Torso.CFrame=dist*CFrame.new(0,0,-dist/2)
+    User.Torso.CFrame=dir*CFrame.new(0,0,-dist/2)
     local glitch=Glitch:clone()
     glitch.Parent=workspace
     glitch.Torso.CFrame=dir*CFrame.new(0,0,-i)
     game.Debris:AddItem(glitch,1)
     wait(0)
     end
-    User.Torso.CFrame=dist*CFrame.new(0,0,-dist)
+    User.Torso.CFrame=dir*CFrame.new(0,0,-dist)
     wait(2)
     Teleporting=false
     end
