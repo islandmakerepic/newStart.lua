@@ -26,12 +26,9 @@ local Mode = Modes[1]
 local Pressed = {}
 
 Cursor.KeyDown:connect(function(Key)
-Pressed[Key] = true
+Pressed[Key] = not Pressed[Key]
 end)
 
-Cursor.KeyUp:connect(function(Key)
-Pressed[Key] = false
-end)
 
 Cursor.Button1Down:connect(function()
 Click = true
@@ -44,6 +41,12 @@ end)
 local Teleporting = false
 
 while wait(0) do
+  if Pressed['t'] then
+    Mode=Modes[1]
+  end
+  if Pressed['x'] then
+    Mode=Modes[2]
+    end
   if not Teleporting then
     if Click and Mode==Modes[1] then
     local spot = Cursor.Hit
@@ -64,6 +67,25 @@ while wait(0) do
     User.Torso.CFrame=dir*CFrame.new(0,2,-dist)
     wait(0.5)
     Teleporting=false
+    end
+end
+if Mode==Modes[2] then
+  if Click then
+    User.Torso.BrickColor=BrickColor.Black()
+    User.Head.BrickColor=BrickColor.Gray()
+    User['Right Arm'].BrickColor=BrickColor.Gray()
+    User['Left Arm'].BrickColor=BrickColor.Gray()
+    User['Left Leg'].BrickColor=BrickColor.Black()
+    User['Right Leg'].BrickColor=BrickColor.Black()
+    for i=1,math.random(2,4) do
+      local tf=Glitch:Clone()
+      tf.Parent=workspace
+      tf.Torso.CFrame=User.Torso.CFrame
+      *CFrame.new(math.random(-50,50),math.random(-10,10),math.random(-30,40))
+      *CFrame.new(0,0,-3)
+      game.Debris:AdddItem(tf,math.random(1,20)/7)
+      end
+    else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
   end
 end
