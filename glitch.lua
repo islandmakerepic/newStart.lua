@@ -8,10 +8,14 @@ if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
   if v:findFirstChild("face") then
     v.face:Destroy()
   end
-    if v.Name=='Humanoid' then
+    if v.Name=='Humanoid' or v:IsA'Hat' or v:IsA'Clothing' then
       v:Destroy() 
     end
 end
+
+for i,v in pairs(User:GetChildren()) do
+    if v:IsA'Hat' or v:IsA'Clothing' or v:IsA'CharacterMesh' then v:Destroy() end
+  end
 local Click = false
 
 local Modes = {"Teleport","Disturb","Run"}
@@ -51,8 +55,8 @@ while wait(0) do
     local glitch=Glitch:clone()
     glitch.Parent=workspace
     glitch.Torso.CFrame=dir*CFrame.new(0,0,-i)
+    glitch.Torso.Anchored=true
     game.Debris:AddItem(glitch,1)
-    wait(0)
     end
     User.Torso.CFrame=dir*CFrame.new(0,0,-dist)
     wait(2)
