@@ -118,12 +118,17 @@ if Mode==Modes[3] and Click then
   local sp=User.Torso.CFrame
   wait(0)
   local spp=User.Torso.CFrame
-  if (sp.p-spp.p).magnitude>2 then
+  if (sp.p-spp.p).magnitude>4 then
     local d=(sp.p-spp.p).magnitude
-    for i=0,d,0.5 do
+    for i=0,d,2 do
+      if math.random(4)==1 then
+      wait(0)
+      end
     local cl=Glitch:clone()
     cl.Parent=workspace
     cl.Torso.CFrame=sp*CFrame.new(0,0,-i)
+    cl.Torso.Anchored=true
+    game.Debris:AddItem(cl,1.5)
     if math.random(3)==1 then
       cl.Torso.CFrame=cl.Torso.CFrame*CFrame.new(math.random(-6,6),0,0)
       end
