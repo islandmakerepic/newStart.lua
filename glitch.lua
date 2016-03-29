@@ -96,9 +96,11 @@ if Mode==Modes[2] then
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
           local cf=h.CFrame
+          local p = h.Parent
           h:Destroy()
           dup:clearAllChildren()
           dup.Anchored=true
+          dup.Parent=p
           dup.CFrame=cf*CFrame.Angles(0,math.rad(180),0)
           dup.Anchored=false
           game.Debris:AddItem(dup,1)
