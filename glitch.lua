@@ -28,11 +28,11 @@ Cursor.KeyUp:connect(function(Key)
 Pressed[Key] = false
 end)
 
-Cursor.MouseButton1Down:connect(function()
+Cursor.Button1Down:connect(function()
 Click = true
 end)
 
-Cursor.MouseButton1Up:connect(function()
+Cursor.Button1Up:connect(function()
 Click = false
 end)
 
