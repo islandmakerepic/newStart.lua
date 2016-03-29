@@ -79,11 +79,11 @@ if Mode==Modes[2] then
     User['Left Arm'].BrickColor=BrickColor.Gray()
     User['Left Leg'].BrickColor=BrickColor.Black()
     User['Right Leg'].BrickColor=BrickColor.Black()
-    for i=1,math.random(2,4) do
+    for i=1,math.random(2,7) do
       local tf=Glitch:Clone()
       tf.Parent=workspace
       tf.Torso.CFrame=User.Torso.CFrame
-      *CFrame.new(math.random(-50,50),math.random(-10,10),math.random(-30,40))
+      *CFrame.new(math.random(-25,25),math.random(-10,10),math.random(-20,35))
       *CFrame.new(0,0,-3)
       game.Debris:AddItem(tf,math.random(1,20)/7)
       end
