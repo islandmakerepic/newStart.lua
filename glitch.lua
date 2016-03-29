@@ -86,6 +86,7 @@ if Mode==Modes[2] then
       *CFrame.new(math.random(-15,10),math.random(-10,10),math.random(-15,25))
       *CFrame.new(0,0,1)
       game.Debris:AddItem(tf,math.random(1,20)/7)
+      tf.Torso.Anchored=true
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
