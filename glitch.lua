@@ -118,7 +118,7 @@ if Mode==Modes[3] and Click then
   local sp=User.Torso.CFrame
   wait(0)
   local spp=User.Torso.CFrame
-  if (sp.p-spp.p).magnitude>4 then
+  if (sp.p-spp.p).magnitude>1 then
     local d=(sp.p-spp.p).magnitude
     for i=0,d,2 do
       if math.random(4)==1 then
