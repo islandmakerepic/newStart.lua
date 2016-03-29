@@ -3,7 +3,7 @@ local User = Player.Character
 local Cursor = Player:GetMouse()
   User.Archivable=true
 local Glitch = User:clone()
-  for i,v in pairs(Glitch:GetChildren())
+  for i,v in pairs(Glitch:GetChildren()) do
 if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
   if v:findFirstChild("face") then
     v.face:Destroy()
