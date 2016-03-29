@@ -11,6 +11,7 @@ if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
     if v.Name=='Humanoid' or v:IsA'Hat' or v:IsA'Clothing' then
       v:Destroy() 
     end
+    if v:IsA'BasePart' then v.CanCollide=false v.Transparency=0.5 end
 end
 
 for i,v in pairs(User:GetChildren()) do
@@ -54,7 +55,7 @@ while wait(0) do
     User.Torso.CFrame=dir*CFrame.new(0,0,-dist/2)
     local glitch=Glitch:clone()
     glitch.Parent=workspace
-    glitch.Torso.CFrame=dir*CFrame.new(0,0,-i)
+    glitch.Torso.CFrame=dir*CFrame.new(0,3,-i)
     glitch.Torso.Anchored=true
     game.Debris:AddItem(glitch,1)
     end
