@@ -103,7 +103,7 @@ if Mode==Modes[2] then
           dup.Parent=p
           dup.CFrame=cf*CFrame.Angles(0,math.rad(180),0)
           dup.Anchored=false
-          game.Debris:AddItem(dup,1)
+          game.Debris:AddItem(dup,6)
           end
         end)
       end
