@@ -39,7 +39,12 @@ end)
 Cursor.Button1Up:connect(function()
 Click = false
 end)
-
+named=function(part,namez)
+  for i,v in pairs(namez) do
+    if part.Name:lower()==v:lower() then return true end
+  end
+  return nil
+  end
 local Teleporting = false
 
 while wait(0) do
@@ -87,6 +92,18 @@ if Mode==Modes[2] then
       *CFrame.new(0,0,1)
       game.Debris:AddItem(tf,math.random(1,20)/7)
       tf.Torso.Anchored=true
+      tf.Torso.Touched:connect(function(h)
+        if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base"}) then
+          local dup=h:clone()
+          local cf=h.CFrame
+          h:Destroy()
+          dup:clearAllChildren()
+          dup.Anchored=true
+          dup.CFrame=cf*CFrame.Angles(0,math.rad(180),0)
+          dup.Anchored=false
+          game.Debris:AddItem(dup,1)
+          end
+        end)
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
