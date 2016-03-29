@@ -118,18 +118,27 @@ if Mode==Modes[3] and Click then
   local sp=User.Torso.CFrame
   wait(0)
   local spp=User.Torso.CFrame
-  if (sp.p-spp.p).magnitude>1 then
+  --if (sp.p-spp.p).magnitude>1 then
     local d=(sp.p-spp.p).magnitude
     
     local cl=Glitch:clone()
     cl.Parent=workspace
-    cl.Torso.CFrame=sp
+    cl.Torso.CFrame=sp*CFrame.new(0,0,-3)
     cl.Torso.Anchored=true
     for i,v in pairs(cl:children()) do pcall(function() v.Transparency=0 end) end
     game.Debris:AddItem(cl,1.5)
     if math.random(3)==1 then
-      cl.Torso.CFrame=cl.Torso.CFrame*CFrame.new(math.random(1,3)==math.random(1,3) and -6 or 6,0,0)
+      cl.Torso.CFrame=cl.Torso.CFrame*CFrame.new(math.random(1,3)==math.random(1,3) and -10 or 10,0,3)
+      if math.random(3)==1 then
+        cf1=User.Torso.CFrame
+        cf2=cl.Torso.CFrame
+        User.Torso.CFrame=cf2
+        cl.Torso.CFrame=cf1
+        wait(0)
+        User.Torso.CFrame=cf1
+        cl.Torso.CFrame=cf2
+        end
       end
-  end
+  --end
 end
 end
