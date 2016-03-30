@@ -136,8 +136,10 @@ if Mode==Modes[3] and Click then
         User.Torso.CFrame=cf2
         cl.Torso.CFrame=cf1
         wait(0)
+        if Click then
         User.Torso.CFrame=cf1
         cl.Torso.CFrame=cf2
+        end
       end
       wait(0)
       end
