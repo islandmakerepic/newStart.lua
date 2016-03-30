@@ -113,6 +113,7 @@ if Mode==Modes[2] then
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
 end
+if not Click then User.Humanoid.WalkSpeed=20 end
 if Mode==Modes[3] and Click then
   User.Humanoid.WalkSpeed=100
   local sp=User.Torso.CFrame
@@ -127,9 +128,9 @@ if Mode==Modes[3] and Click then
     cl.Torso.Anchored=true
     for i,v in pairs(cl:children()) do pcall(function() v.Transparency=0 end) end
     game.Debris:AddItem(cl,1.5)
-    if math.random(3)==1 then
+    if math.random(7)==1 then
       cl.Torso.CFrame=cl.Torso.CFrame*CFrame.new(math.random(1,3)==math.random(1,3) and -10 or 10,0,-3)
-      if math.random(3)==1 then
+      if math.random(2)==1 then
         cf1=User.Torso.CFrame
         cf2=cl.Torso.CFrame
         User.Torso.CFrame=cf2
@@ -137,7 +138,8 @@ if Mode==Modes[3] and Click then
         wait(0)
         User.Torso.CFrame=cf1
         cl.Torso.CFrame=cf2
-        end
+      end
+      wait(0)
       end
   --end
 end
