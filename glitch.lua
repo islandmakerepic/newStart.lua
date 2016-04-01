@@ -73,9 +73,14 @@ while wait(0) do
     glitch.Torso.Anchored=true
     game.Debris:AddItem(glitch,1)
     wait(-1)
-    end
+  end
+  for i=1,10 do
+    User.Torso.Anchored=true
     User.Torso.CFrame=dir*CFrame.new(0,2,-dist)
-    wait(0.5)
+    wait(0)
+    User.Torso.Anchored=false
+    end
+    wait(0)
     Teleporting=false
     end
 end
