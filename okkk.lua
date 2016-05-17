@@ -1,6 +1,10 @@
 local follow=function(o,o2)
+  coroutine.wrap(function()
+    while wait(0) do
 cf=o2.Parent.Torso.CFrame*CFrame.new(4,0,0)
 o:MoveTo(cf.p,o2.Parent.Torso)
+end 
+end)()
 end
 local find=function(str)
 for i,v in pairs(workspace:children()) do
