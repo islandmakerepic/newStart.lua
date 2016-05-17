@@ -14,13 +14,26 @@ local attacks = {
 return
 end,
 ['devour']=function(position,target)
+  
 for i=-25,25,5 do
+  wait(0)
 local attack=headMain:clone()
 attack.Anchored=true
 attack.Parent=char
-attack.CFrame=char.Torso.CFrame*CFrame.new(i,0,math.random(-4,4))
+attack.CFrame=char.Torso.CFrame*CFrame.new(i,0,math.random(-15,15))
 attack.Material='Neon'
+attack:breakJoints()
+Instance.new("PointLight",attack)
+
+game.Debris:AddItem(attack,5)
+coroutine.wrap(function()
+  while attack.Parent==char and wait(0) do
+    cf=CFrame.new( (position-(target and target.Position or Vector3.new(0,0,0)) ))
+attack.CFrame=CFrame.new(attack.CFrame.p,cf)*CFrame.new(0,0,-2)
+    end
+  end)()
 end
+
 end
 }
 
