@@ -29,7 +29,7 @@ game.Debris:AddItem(attack,5)
 coroutine.wrap(function()
   while attack.Parent==char and wait(0) do
     cf=CFrame.new(position)
-attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(1,0,-2)
+attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and 1 or -1,0,-2)
     end
   end)()
 end
