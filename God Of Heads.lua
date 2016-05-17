@@ -28,7 +28,7 @@ Instance.new("PointLight",attack)
 game.Debris:AddItem(attack,5)
 coroutine.wrap(function()
   while attack.Parent==char and wait(0) do
-    cf=CFrame.new( (position-(target and target.Position or Vector3.new(0,0,0)) ))
+    cf=CFrame.new(position)
 attack.CFrame=CFrame.new(attack.CFrame.p,cf.p)*CFrame.new(0,0,-2)
     end
   end)()
