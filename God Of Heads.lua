@@ -1,4 +1,15 @@
 --God of heads--
+local Kill=function(pos)
+  local cf=CFrame.new(pos)*CFrame.new(0,2,0)
+  local death=Instance.new("Part",workspace)
+  death.Transparency=1
+  death.CanCollide=false
+  death.CFrame=cf
+  death.Touched:connect(function(h)
+    pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-5 end)
+    death:Destroy()
+    end)
+  end
 
 local headMain=script.Parent.Head:clone()
 headMain.Name='HeadAttack'
@@ -32,14 +43,18 @@ attack:breakJoints()
 
 Instance.new("PointLight",attack)
 local diff=(position-attack.CFrame.p).magnitude
-print(diff)
+--print(diff)
 game.Debris:AddItem(attack,(diff/65)+1.5)
+coroutine.wrap(function()
+  wait((diff/65)+1)
+  Kill(attack.Position)
+  end)()
 coroutine.wrap(function()
   wait(1)
   Instance.new("Fire",attack).Color=BrickColor.new'Toothpaste'.Color
   while attack.Parent==char and wait(0) do
     cf=CFrame.new(position)
-attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and 0.5 or -0.5,0,-2)
+attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and math.random(0,5)/10 or math.random(-5,0)/10,0,-2)
     end
   end)()
 end
