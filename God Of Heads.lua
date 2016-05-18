@@ -26,7 +26,7 @@ attack:breakJoints()
 Instance.new("PointLight",attack)
 local diff=(position-attack.CFrame.p).magnitude
 print(diff)
-game.Debris:AddItem(attack,(diff/30)+1)
+game.Debris:AddItem(attack,(diff/65)+1)
 coroutine.wrap(function()
   wait(1)
   while attack.Parent==char and wait(0) do
