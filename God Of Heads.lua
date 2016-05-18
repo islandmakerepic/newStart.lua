@@ -6,6 +6,7 @@ local Kill=function(pos)
   death.CanCollide=false
   death.CFrame=cf
   death.Touched:connect(function(h)
+    if h.Name=='Head' or h.Parent==char then return end
     pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-5 end)
     death:Destroy()
     end)
