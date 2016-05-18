@@ -85,7 +85,7 @@ local diff=(position-attack.CFrame.p).magnitude
 --print(diff)
 game.Debris:AddItem(attack,(diff/65)+1.5)
 coroutine.wrap(function()
-  wait((diff/65)+1.48)
+  wait((diff/65)+1.4)
   Kill(attack.Position)
   end)()
 coroutine.wrap(function()
