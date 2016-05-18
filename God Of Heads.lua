@@ -25,6 +25,7 @@ coroutine.wrap(function()
   for i=0,200,50 do
     wait(0)
     attack.CFrame=attack.CFrame*CFrame.new(0,-0.50,0)
+    end
   end)()
 attack.Material='Neon'
 attack:breakJoints()
