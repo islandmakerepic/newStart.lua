@@ -20,21 +20,23 @@ for i=-25,25,5 do
 local attack=headMain:clone()
 attack.Anchored=true
 attack.Parent=char
-attack.CFrame=char.Torso.CFrame*CFrame.new(i,-2,math.random(-15,15))
+attack.CFrame=char.Torso.CFrame*CFrame.new(i,-3,math.random(-15,15))
 coroutine.wrap(function()
-  for i=0,200,50 do
+  for i=0,300,50 do
     wait(0)
     attack.CFrame=attack.CFrame*CFrame.new(0,0.50,0)
     end
   end)()
 attack.Material='Neon'
 attack:breakJoints()
+
 Instance.new("PointLight",attack)
 local diff=(position-attack.CFrame.p).magnitude
 print(diff)
 game.Debris:AddItem(attack,(diff/65)+1.5)
 coroutine.wrap(function()
   wait(1)
+  Instance.new("Fire",attack).Color=BrickColor.new'Toothpaste'.Color
   while attack.Parent==char and wait(0) do
     cf=CFrame.new(position)
 attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and 0.5 or -0.5,0,-2)
