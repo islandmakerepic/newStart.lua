@@ -24,8 +24,9 @@ attack.CFrame=char.Torso.CFrame*CFrame.new(i,0,math.random(-15,15))
 attack.Material='Neon'
 attack:breakJoints()
 Instance.new("PointLight",attack)
+local diff=(position-attack.CFrame.p).magnitude
 
-game.Debris:AddItem(attack,5)
+game.Debris:AddItem(attack,(diff/20)+1)
 coroutine.wrap(function()
   wait(1)
   while attack.Parent==char and wait(0) do
