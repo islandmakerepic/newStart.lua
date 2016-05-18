@@ -16,11 +16,16 @@ end,
 ['devour']=function(position,target)
   
 for i=-25,25,5 do
-  wait(0)
+  if math.random(0,3)==1 then wait(0) end
 local attack=headMain:clone()
 attack.Anchored=true
 attack.Parent=char
-attack.CFrame=char.Torso.CFrame*CFrame.new(i,0,math.random(-15,15))
+attack.CFrame=char.Torso.CFrame*CFrame.new(i,2,math.random(-15,15))
+coroutine.wrap(function()
+  for i=0,200,50 do
+    wait(0)
+    attack.CFrame=attack.CFrame*CFrame.new(0,-0.50,0)
+  end)()
 attack.Material='Neon'
 attack:breakJoints()
 Instance.new("PointLight",attack)
