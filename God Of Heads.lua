@@ -10,6 +10,22 @@ local mouse=plr:GetMouse()
 
 local selected='none'
 
+
+local Kill=function(pos)
+  local cf=CFrame.new(pos)*CFrame.new(0,4,0)
+  local death=Instance.new("Part",workspace)
+  death.Transparency=0.5
+  death.Size=Vector3.new(4,1,4)
+  death.CanCollide=false
+  death.CFrame=cf
+  death.Touched:connect(function(h)
+    if h.Name=='Head' or h.Parent==char then return end
+    pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-5 end)
+    death:Destroy()
+    end)
+end
+
+
 local attacks = {
 ['none']=function()
 return
@@ -57,19 +73,7 @@ selected='none'
 end
 
 
-local Kill=function(pos)
-  local cf=CFrame.new(pos)*CFrame.new(0,4,0)
-  local death=Instance.new("Part",workspace)
-  death.Transparency=0.5
-  death.Size=Vector3.new(4,1,4)
-  death.CanCollide=false
-  death.CFrame=cf
-  death.Touched:connect(function(h)
-    if h.Name=='Head' or h.Parent==char then return end
-    pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-5 end)
-    death:Destroy()
-    end)
-end
+
 
 
 mouse.Button1Down:connect(function()
