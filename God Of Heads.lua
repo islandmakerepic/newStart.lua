@@ -87,12 +87,19 @@ local diff=(position-attack.CFrame.p).magnitude
 --print(diff)
 game.Debris:AddItem(attack,(diff/65)+1.5)
 coroutine.wrap(function()
-  wait((diff/65)+1.4)
+  wait((diff/65)+1)
+  for i=1,10 do wait(0.05)
   Kill(attack.Position)
+  end
   end)()
 coroutine.wrap(function()
   wait(1)
   Instance.new("Fire",attack).Color=BrickColor.new'Toothpaste'.Color
+  attack.Touched:connect(function(h)
+    if h.Name=='Head' or h.Parent==char then return end
+    pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-20 end)
+    game.Debris:AddItem(death,0.1)
+    end)
   while attack.Parent==char and wait(0) do
     cf=CFrame.new(position)
 attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and math.random(0,5)/10 or math.random(-5,0)/10,0,-(2+i/50))
