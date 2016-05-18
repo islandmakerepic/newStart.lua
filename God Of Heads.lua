@@ -25,7 +25,7 @@ attack.Material='Neon'
 attack:breakJoints()
 Instance.new("PointLight",attack)
 local diff=(position-attack.CFrame.p).magnitude
-
+print(diff)
 game.Debris:AddItem(attack,(diff/20)+1)
 coroutine.wrap(function()
   wait(1)
