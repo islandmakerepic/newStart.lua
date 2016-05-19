@@ -4,10 +4,11 @@ local m=plr:GetMouse()
 
 local con=function(spot1,spot2,ang)
 local laZ=Instance.new("Part",workspace)
+
+local spot2=spot2*CFrame.new(0,ang,0)
 local D=(spot1.p-spot2.p).magnitude
 laZ.Size=Vector3.new(1,1,D)
-local spot2=spot2*CFrame.new(0,ang,0)
-laZ.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,(-(D/2)))*CFrame.new(0,-ang/2,0)
+laZ.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,(-(D/2)))
 laZ.Anchored=true
 laZ.Transparency=0.25
 laZ.BrickColor=BrickColor.Yellow()
