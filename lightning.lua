@@ -18,7 +18,7 @@ raypart.Size=Vector3.new(1,1,dist)
 raypart.Anchored=true
 raypart.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,-(dist/2))
 local num=dist
-local cff=raypart.CFrame*CFrame.new.new(0,0,dist/2)
+local cff=raypart.CFrame*CFrame.new(0,0,dist/2)
 local ok=-8
 for i=0,dist,5 do
 wait(0)
