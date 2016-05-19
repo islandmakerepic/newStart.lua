@@ -25,11 +25,14 @@ raypart.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,-(dist/2))
 local num=dist
 local cff=raypart.CFrame*CFrame.new(0,0,dist/2)
 local ok=8
+local last=cff
 for i=0,dist,5 do
 wait(0)
 local n1=-ok
 local n2=math.random(n1,ok)
-con(cff*CFrame.new(0,0,-i-5),cff*CFrame.new(0,0,-i),n2)
+
+con(last,cff*CFrame.new(0,0,-i),n2)
+last=cff*CFrame.new(0,0,-i)
 end
 end
 
