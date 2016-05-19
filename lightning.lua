@@ -8,12 +8,16 @@ local D=(spot1.p-spot2.p).magnitude
 laZ.Size=Vector3.new(1,1,D)
 local spot2=spot2*CFrame.new(0,0,ang)
 laZ.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,-(D/2))
+laZ.Anchored=true
+laZ.Transparency=0.25
+laZ.BrickColor=BrickColor.Yellow()
 return laZ
 end
 
 local laz=function(spot1,spot2)
 local raypart=Instance.new("Part",workspace)
 local dist=(spot1.p-spot2.p).magnitude
+raypart.Transparency=1
 raypart.Size=Vector3.new(1,1,dist)
 raypart.Anchored=true
 raypart.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,-(dist/2))
