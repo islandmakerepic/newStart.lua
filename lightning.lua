@@ -19,10 +19,10 @@ raypart.Anchored=true
 raypart.CFrame=CFrame.new(spot1.p,spot2.p)*CFrame.new(0,0,-(dist/2))
 local num=dist
 local cff=raypart.CFrame*CFrame.new(0,0,dist/2)
-local ok=-8
+local ok=8
 for i=0,dist,5 do
 wait(0)
-ok=math.random(-ok,ok)
+ok=math.random((ok-ok-ok),ok)
 con(cff*CFrame.new(0,0,-i-5),cff*CFrame.new(0,0,-i),ok)
 end
 end
