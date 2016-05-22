@@ -59,7 +59,14 @@ coroutine.wrap(function()
   end)()
 coroutine.wrap(function()
   wait(1)
-  Instance.new("Fire",attack).Color=BrickColor.new'Toothpaste'.Color
+  attack.BrickColor=BrickColor.new'Toothpaste'.Color
+  attack.Material='Neon'
+  coroutine.wrap(function()
+    wait(2)
+    pcall(function()
+    attack.Material='Plastic'
+  end)
+  end()
   while attack.Parent==char and wait(0) do
     cf=CFrame.new(position)
 attack.CFrame=CFrame.new(attack.CFrame.p,(cf*CFrame.new(i/5,0,0)).p)*CFrame.new(i<0 and math.random(0,5)/10 or math.random(-5,0)/10,0,-2)
