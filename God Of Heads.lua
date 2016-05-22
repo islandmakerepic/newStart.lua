@@ -59,7 +59,7 @@ coroutine.wrap(function()
   end)()
 coroutine.wrap(function()
   wait(1)
-  attack.BrickColor=BrickColor.new'Toothpaste'.Color
+  attack.BrickColor=BrickColor.new'Toothpaste'
   attack.Material='Neon'
   coroutine.wrap(function()
     wait(2)
