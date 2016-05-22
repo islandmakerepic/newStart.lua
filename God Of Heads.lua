@@ -101,7 +101,8 @@ coroutine.wrap(function()
   end)()
 coroutine.wrap(function()
   wait(1)
- 
+  attack.BrickColor=BrickColor.new'Toothpaste'
+  attack.Material='Neon'
   attack.Touched:connect(function(h)
     if h.Name=='Head' or h.Parent==char then return end
     pcall(function() h.Parent.Humanoid.Health=h.Parent.Humanoid.Health-20 end)
