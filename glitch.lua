@@ -167,7 +167,7 @@ if Mode==Modes[4] and Click then
         end
     end
     local die=targ.Parent
-    die.Torso.CFrame=CFrame.new(die.Torso.Position,User.Torso.CFrame)
+    die.Torso.CFrame=CFrame.new(die.Torso.Position,User.Torso.CFrame.p)
     User.Torso.CFrame=CFrame.new(User.Torso.Position,die.Torso.Position)
     Teleporting=true
     local spot1=die.Torso.CFrame
