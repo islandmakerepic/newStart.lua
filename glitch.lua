@@ -158,7 +158,7 @@ if Mode==Modes[4] and Click then
     local targ=Cursor.Target
     if targ.Parent:findFirstChild'Torso' then
       local CC=targ.Parent:clone()
-      local CCC=Instance.new("Model)
+      local CCC=Instance.new("Model")
       CCC.Name='DeathClone'
       for i,v in pairs(CC:children()) do
         if v.Name~='Head' and v.Name~='Torso' and not v.Name:match'Arm' or v.Name:match'Leg' then
