@@ -157,6 +157,7 @@ if Mode==Modes[4] and Click then
   if Cursor.Target and not Teleporting then
     local targ=Cursor.Target
     if targ.Parent:findFirstChild'Torso' then
+      targ.Parent.Archivable=true
       local CC=targ.Parent:clone()
       local CCC=Instance.new("Model")
       CCC.Name='DeathClone'
