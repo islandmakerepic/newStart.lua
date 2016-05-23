@@ -184,11 +184,13 @@ if Mode==Modes[4] and Click then
     coroutine.wrap(function()
     for i=1,d1,5 do
       local gl=CCC:clone()
-      gl.Parent=workspace
-      gl.Torso.Anchored=true
       gl:MakeJoints()
-      gl.Torso.CFrame=spot1*CFrame.new(0,0,-i)
+      gl.Parent=workspace
+      gl:MakeJoints()
       
+      
+      gl.Torso.CFrame=spot1*CFrame.new(0,0,-i)
+      gl.Torso.Anchored=true
       game.Debris:AddItem(gl,1)
       wait(0)
     end
