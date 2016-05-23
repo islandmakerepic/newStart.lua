@@ -19,7 +19,7 @@ for i,v in pairs(User:GetChildren()) do
   end
 local Click = false
 
-local Modes = {"Teleport","Disturb","Run"}
+local Modes = {"Teleport","Disturb","Run","SwapDeath"}
 
 local Mode = Modes[1]
 
@@ -56,6 +56,9 @@ while wait(0) do
   end
   if Pressed['v'] then
     Mode=Modes[3]
+  end
+  if Pressed['q'] then
+    Mode=Modes[4]
     end
   if not Teleporting then
     if Click and Mode==Modes[1] then
@@ -150,4 +153,51 @@ if Mode==Modes[3] and Click then
       end
   --end
 end
+if Mode==Modes[4] and Click then
+  if Cursor.Target and not Teleporting then
+    local targ=Cursor.Target
+    if targ.Parent:findFirstChild'Torso' then
+      local CC=targ.Parent:clone()
+      local CCC=Instance.new("Model)
+      CCC.Name='DeathClone'
+      for i,v in pairs(CC:children()) do
+        if v.Name~='Head' and v.Name~='Torso' and not v.Name:match'Arm' or v.Name:match'Leg' then
+        else
+          v:clone().Parent=CCC
+        end
+    end
+    local die=targ.Parent
+    die.Torso.CFrame=CFrame.new(die.Torso.Position,User.Torso.CFrame)
+    User.Torso.CFrame=CFrame.new(User.Torso.Position,die.Torso.Position)
+    Teleporting=true
+    local spot1=die.Torso.CFrame
+    local spot2=User.Torso.CFrame
+    local d1=(spot1.p-spot2.p).magnitude
+    local d2=(spot2.p-spot1.p).magnitude
+    local D1=d1/2
+    local D2=d2/2
+    die.Torso.CFrame=spot1*CFrame.new(0,0,-D1)
+    User.Torso.CFrame=spot2*CFrame.new(0,0,-D2)
+    coroutine.wrap(function()
+    for i=1,d1 do
+      local gl=CCC:clone()
+      gl.Parent=workspace
+      gl.Torso.CFrame=spot1*CFrame.new(0,0,-i)
+      game.Debris:AddItem(gl,1)
+      wait(0)
+    end
+    die.Torso.CFrame=spot1*CFrame.new(0,0,-d1)
+    die.Torso:explode()
+  end)()
+  for i=1,d2 do
+    local gl=Glitch:clone()
+    gl.Parent=workspace
+    gl.Torso.CFrame=spot2*CFrame.new(0,0,-i)
+    game.Debris:AddItem(gl,1)
+    wait(0)
+  end
+  User.Torso.CFrame=spot1
+  Teleporting=false
+    end
+  end
 end
