@@ -179,17 +179,20 @@ if Mode==Modes[4] and Click then
     die.Torso.CFrame=spot1*CFrame.new(0,0,-D1)
     User.Torso.CFrame=spot2*CFrame.new(0,0,-D2)
     coroutine.wrap(function()
-    for i=1,d1 do
+    for i=1,d1,5 do
       local gl=CCC:clone()
       gl.Parent=workspace
+      gl.Torso.Anchored=true
+      gl:MakeJoints()
       gl.Torso.CFrame=spot1*CFrame.new(0,0,-i)
+      
       game.Debris:AddItem(gl,1)
       wait(0)
     end
     die.Torso.CFrame=spot1*CFrame.new(0,0,-d1)
-    die.Torso:explode()
+    die.Torso:breakJoints()
   end)()
-  for i=1,d2 do
+  for i=1,d2,5 do
     local gl=Glitch:clone()
     gl.Parent=workspace
     gl.Torso.CFrame=spot2*CFrame.new(0,0,-i)
