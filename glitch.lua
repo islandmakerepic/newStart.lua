@@ -164,10 +164,12 @@ if Mode==Modes[4] and Click then
       for i,v in pairs(CC:children()) do
         if v.Name~='Head' and v.Name~='Torso' and not v.Name:match'Arm' or v.Name:match'Leg' then
         else
+          pcall(function()
           local cccc=v:clone()
           cccc.Parent=CCC
           cccc.CanCollide=false
           cccc.Transparency=0.5
+          end)
         end
     end
     local die=targ.Parent
