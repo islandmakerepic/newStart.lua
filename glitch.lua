@@ -235,8 +235,8 @@ if Mode==Modes[5] and Click and not Teleporting then
   for i=1,100 do
     local osht=Glitch:clone()
     osht.Parent=workspace
-    osht.Torso.CFrame=base*CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
-    *CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
+    osht.Torso.CFrame=base*CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
+    *CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
     osht.Torso.Anchored=true
     if math.random(5)==1 then wait(0) end
   coroutine.wrap(function()
