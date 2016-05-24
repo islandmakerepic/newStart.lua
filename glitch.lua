@@ -234,7 +234,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   for i=1,50 do
     local osht=Glitch:clone()
     osht.Parent=workspace
-    osht.Torso.CFrame=base*CFrame.new(math.random(-20,50),math.random(-10,10),math.random(-50,50))
+    osht.Torso.CFrame=base*CFrame.new(math.random(-10,20),math.random(-10,10),math.random(-25,15))
     *CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     osht.Torso.Anchored=true
     if math.random(3)==1 then wait(0) end
@@ -251,6 +251,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   end
   wait(0.5)
   osht.Head.BrickColor=BrickColor.Red()
+  game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
       if h.Parent~=User then
