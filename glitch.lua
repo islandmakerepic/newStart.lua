@@ -252,7 +252,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   wait(0.5)
   osht.Head.BrickColor=BrickColor.Red()
   osht.Torso.Touched:connect(function(h)
-    if not named({"Base","Part"}) then
+    if not named(h,{"Base","Part"}) then
       if h.Parent~=User then
     h.BrickColor=BrickColor.Random()
     h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
