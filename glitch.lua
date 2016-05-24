@@ -3,6 +3,7 @@ local User = Player.Character
 local Cursor = Player:GetMouse()
   User.Archivable=true
 local Glitch = User:clone()
+Glitch.Name='Glitch'
 local colors={}
   for i,v in pairs(Glitch:GetChildren()) do
 if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
@@ -255,7 +256,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
-      if h.Parent~=User then
+      if h.Parent~=User and h.Parent.Name~='Glitch' then
     h.BrickColor=BrickColor.Random()
     h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
     h.Material='Neon'
