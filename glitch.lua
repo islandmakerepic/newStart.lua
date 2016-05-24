@@ -3,6 +3,7 @@ local User = Player.Character
 local Cursor = Player:GetMouse()
   User.Archivable=true
 local Glitch = User:clone()
+local colors={}
   for i,v in pairs(Glitch:GetChildren()) do
 if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
   if v:findFirstChild("face") then
@@ -11,7 +12,7 @@ if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
     if v.Name=='Humanoid' or v:IsA'Hat' or v:IsA'Clothing' then
       v:Destroy() 
     end
-    if v:IsA'BasePart' then v.CanCollide=false v.Transparency=0.5 end
+    if v:IsA'BasePart' then v.CanCollide=false v.Transparency=0.5 colors[v.Name]=v.BrickColor end
 end
 
 for i,v in pairs(User:GetChildren()) do
@@ -19,7 +20,7 @@ for i,v in pairs(User:GetChildren()) do
   end
 local Click = false
 
-local Modes = {"Teleport","Disturb","Run","SwapDeath"}
+local Modes = {"Teleport","Disturb","Run","SwapDeath","GlitchSplode"}
 
 local Mode = Modes[1]
 
@@ -59,6 +60,9 @@ while wait(0) do
   end
   if Pressed['q'] then
     Mode=Modes[4]
+  end
+  if Pressed['f'] then
+    Mode=Modes[5]
     end
   if not Teleporting then
     if Click and Mode==Modes[1] then
@@ -212,4 +216,19 @@ if Mode==Modes[4] and Click then
     end
   end
 end
+if Mode==Modes[5] and Click then
+  local base=User.Torso.CFrame
+  for i,v in pairs(User:children()) do
+    pcall(function()
+      v.BrickColor=BrickColor.Random()
+      v.Material='Neon'
+      coroutine.wrap(function()
+        wait(3)
+        v.BrickColor=colors[v.Name]
+        v.Material='Plastic'
+        end)()
+      end)
+  end
+  
+  end
 end
