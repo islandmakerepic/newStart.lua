@@ -231,16 +231,16 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
   end
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
-  for i=1,50 do
+  for i=1,100 do
     local osht=Glitch:clone()
     osht.Parent=workspace
     osht.Torso.CFrame=base*CFrame.new(math.random(-10,20),math.random(-10,10),math.random(-25,15))
     *CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     osht.Torso.Anchored=true
-    if math.random(3)==1 then wait(0) end
+    if math.random(5)==1 then wait(0) end
   coroutine.wrap(function()
-    wait(1)
-    for i=1,20 do
+    wait(0.5)
+    for i=1,20,2 do
       wait(0)
       for i,v in pairs(osht:children()) do
         pcall(function()
@@ -249,7 +249,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
   end
-  wait(0.5)
+  wait(0)
   osht.Head.BrickColor=BrickColor.Red()
   game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
