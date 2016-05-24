@@ -216,8 +216,9 @@ if Mode==Modes[4] and Click then
     end
   end
 end
-if Mode==Modes[5] and Click then
+if Mode==Modes[5] and Click and not Teleporting then
   local base=User.Torso.CFrame
+  Teleporting=true
   for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Random()
@@ -242,8 +243,10 @@ if Mode==Modes[5] and Click then
     for i=1,20 do
       wait(0)
       for i,v in pairs(osht:children()) do
+        pcall(function()
       v.BrickColor=BrickColor.Random()
       v.Material='Neon'
+      end)
     end
   end
   wait(0.5)
