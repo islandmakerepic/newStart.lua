@@ -22,7 +22,8 @@ for i,v in pairs(User:GetChildren()) do
 local Click = false
 
 local Modes = {"Teleport","Disturb","Run","SwapDeath","GlitchSplode"}
-
+print(table.concat(Modes,', '))
+print('t, x, v, q, f')
 local Mode = Modes[1]
 
 local Pressed = {}
@@ -30,7 +31,10 @@ local Pressed = {}
 Cursor.KeyDown:connect(function(Key)
   for i,v in pairs(Pressed) do Pressed[i]=false end
   if Pressed[Key] then Pressed[Key]=false else
-Pressed[Key] = true end
+Pressed[Key] = true
+wait(0)
+print(Mode)
+end
 end)
 
 
