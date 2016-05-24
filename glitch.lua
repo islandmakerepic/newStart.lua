@@ -261,6 +261,8 @@ if Mode==Modes[5] and Click and not Teleporting then
     end
     end)
     end)()
-    end
   end
+  wait(0.1)
+Teleporting=false
+end
 end
