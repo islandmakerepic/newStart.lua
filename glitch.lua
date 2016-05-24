@@ -251,6 +251,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   end
   wait(0)
   osht.Head.BrickColor=BrickColor.Red()
+  osht.Torso.Anchored=false
   game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
