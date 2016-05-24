@@ -229,6 +229,35 @@ if Mode==Modes[5] and Click then
         end)()
       end)
   end
-  
+  User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
+  for i=1,50 do
+    local osht=Glitch:clone()
+    osht.Parent=workspace
+    osht.Torso.CFrame=base*CFrame.new(math.random(-20,50),math.random(-10,10),math.random(-50,50))
+    *CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
+    osht.Torso.Anchored=true
+    if math.random(3)==1 then wait(0) end
+  coroutine.wrap(function()
+    wait(1)
+    for i=1,20 do
+      wait(0)
+      for i,v in pairs(osht:children()) do
+      v.BrickColor=BrickColor.Random()
+      v.Material='Neon'
+    end
+  end
+  wait(0.5)
+  osht.Head.BrickColor=BrickColor.Red()
+  osht.Torso.Touched:connect(function(h)
+    if not named({"Base","Part"}) then
+      if h.Parent~=User then
+    h.BrickColor=BrickColor.Random()
+    h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
+    h.Material='Neon'
+    end
+    end
+    end)
+    end)()
+    end
   end
 end
