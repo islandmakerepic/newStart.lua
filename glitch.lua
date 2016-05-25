@@ -108,7 +108,9 @@ if Mode==Modes[2] then
     local blocker=Instance.new("Part",workspace)
     blocker.Size=Vector3.new(20,15,20)
     datnum=datnum+1
+    
     if datnum>=100 then datnum=-100 end
+    
     blocker.CFrame=User.Torso.CFrame*CFrame.new(0,datnum/25,0)*CFrame.Angles(0,math.rad(datnum*3.6),math.rad(datnum*3.6))
     blocker.CanCollide=false
     blocker.Transparency=0.98
@@ -119,6 +121,7 @@ if Mode==Modes[2] then
     CLL.Parent=blocker
     CLL.Anchored=true
     blocker.Transparency=1
+    
     local duh=function(h)
       pcall(function()
       if h.Parent==User or h.Parent.Name=='Glitch' then
@@ -136,8 +139,11 @@ return end
           game.Debris:AddItem(dup,6)
           end
 
-      blocker.Touched:connect(duh)
-    for i=1,math.random(2,7) do
+      
+    
+end)
+end
+for i=1,math.random(2,7) do
       local tf=Glitch:Clone()
       tf.Parent=workspace
       tf.Torso.CFrame=User.Torso.CFrame
@@ -147,11 +153,11 @@ return end
       tf.Torso.Anchored=true
       tf.Torso.Touched:connect(duh)
       end
-end)
-end
+blocker.Touched:connect(duh)
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     
   end
+  
 
 end
 if not Click then User.Humanoid.WalkSpeed=20 end
