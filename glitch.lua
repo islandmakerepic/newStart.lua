@@ -131,7 +131,7 @@ return end
           dup.Anchored=false
           game.Debris:AddItem(dup,6)
           end
-      end
+
       blocker.Touched:connect(duh)
     for i=1,math.random(2,7) do
       local tf=Glitch:Clone()
@@ -143,10 +143,12 @@ return end
       tf.Torso.Anchored=true
       tf.Torso.Touched:connect(duh)
       end
+end)
+end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     
-  end)
   end
+
 end
 if not Click then User.Humanoid.WalkSpeed=20 end
 if Mode==Modes[3] and Click then
