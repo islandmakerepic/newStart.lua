@@ -107,13 +107,14 @@ if Mode==Modes[2] then
     User['Right Leg'].BrickColor=BrickColor.Black()
     local blocker=Instance.new("Part",workspace)
     blocker.Size=Vector3.new(20,15,20)
+    blocker.Name='GlitchBlock'
     datnum=datnum+1
     
     if datnum>=100 then datnum=-100 end
     
     blocker.CFrame=User.Torso.CFrame*CFrame.new(0,datnum/25,0)*CFrame.Angles(0,math.rad(datnum*3.6),math.rad(datnum*3.6))
     blocker.CanCollide=false
-    blocker.Transparency=0.98
+    blocker.Transparency=0.985
     blocker.BrickColor=BrickColor.Random()
     blocker.Material='Neon'
     game.Debris:AddItem(blocker,0.8)
@@ -126,7 +127,7 @@ local duh=function(h)
      if not h then return end
       if h.Parent==User or h.Parent.Name=='Glitch' then
         return end
-        if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
+        if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart","GlitchBlock"}) then
           local dup=h:clone()
           local cf=h.CFrame
           local p = h.Parent
