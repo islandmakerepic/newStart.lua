@@ -97,7 +97,7 @@ while wait(0) do
     end
 end
 if Mode==Modes[2] then
-  if not Click then datnum=-3 end
+  if not Click then datnum=-100 end
   if Click then
     User.Torso.BrickColor=BrickColor.Black()
     User.Head.BrickColor=BrickColor.Gray()
@@ -107,14 +107,18 @@ if Mode==Modes[2] then
     User['Right Leg'].BrickColor=BrickColor.Black()
     local blocker=Instance.new("Part",workspace)
     blocker.Size=Vector3.new(20,15,20)
-    datnum=datnum+0.5
-    if datnum>=3 then datnum=-3 end
-    blocker.CFrame=User.Torso.CFrame*CFrame.new(0,datnum,0)*CFrame.Angles(0,math.random(0,200)/100,math.random(0,200)/100)
+    datnum=datnum+1
+    if datnum>=100 then datnum=-100 end
+    blocker.CFrame=User.Torso.CFrame*CFrame.new(0,datnum/25,0)*CFrame.Angles(0,math.rad(datnum*3.6),math.rad(datnum*3.6))
     blocker.CanCollide=false
     blocker.Transparency=0.98
     blocker.BrickColor=BrickColor.Random()
     blocker.Material='Neon'
     game.Debris:AddItem(blocker,0.8)
+    local CLL=blocker:clone()
+    CLL.Parent=blocker
+    CLL.Anchored=true
+    blocker.Transparency=1
     local duh=function(h)
       pcall(function()
       if h.Parent==User or h.Parent.Name=='Glitch' then
