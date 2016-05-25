@@ -106,8 +106,7 @@ if Mode==Modes[2] then
     User['Right Leg'].BrickColor=BrickColor.Black()
     local blocker=Instance.new("Part",workspace)
     blocker.Size=Vector3.new(20,15,20)
-    blocker.CFrame=User.Torso.CFrame*CFrame.Angles(0,math.random(0,200)/100,math.random(0,200)/100)
-    blocker.Anchored=true
+    blocker.CFrame=User.Torso.CFrame*CFrame.new(0,math.random(-2,5),0)*CFrame.Angles(0,math.random(0,200)/100,math.random(0,200)/100)
     blocker.CanCollide=false
     blocker.Transparency=0.98
     blocker.BrickColor=BrickColor.Random()
