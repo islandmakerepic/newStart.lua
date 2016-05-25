@@ -111,13 +111,12 @@ if Mode==Modes[2] then
     datnum=datnum+1
     
     if datnum>=100 then datnum=-100 end
-    
     blocker.CFrame=User.Torso.CFrame*CFrame.new(0,datnum/25,0)*CFrame.Angles(0,math.rad(datnum*3.6),math.rad(datnum*3.6))
     blocker.CanCollide=false
-    blocker.Transparency=0.985
+    blocker.Transparency=0.6
     blocker.BrickColor=BrickColor.Random()
     blocker.Material='Neon'
-    game.Debris:AddItem(blocker,0.8)
+    game.Debris:AddItem(blocker,0.2)
     local CLL=blocker:clone()
     CLL.Parent=blocker
     CLL.Anchored=true
