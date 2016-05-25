@@ -104,15 +104,15 @@ if Mode==Modes[2] then
     User['Left Arm'].BrickColor=BrickColor.Gray()
     User['Left Leg'].BrickColor=BrickColor.Black()
     User['Right Leg'].BrickColor=BrickColor.Black()
-    for i=1,math.random(2,7) do
-      local tf=Glitch:Clone()
-      tf.Parent=workspace
-      tf.Torso.CFrame=User.Torso.CFrame
-      *CFrame.new(math.random(-15,10),math.random(-10,10),math.random(-15,25))
-      *CFrame.new(0,0,1)
-      game.Debris:AddItem(tf,math.random(1,20)/7)
-      tf.Torso.Anchored=true
-      tf.Torso.Touched:connect(function(h)
+    local blocker=Instance.new("Part",workspace)
+    blocker.Size=Vector3.new(12,10,25)
+    blocker.CFrame=User.Torso.CFrame
+    blocker.Anchored=true
+    blocker.CanCollide=false
+    blocker.Transparency=0.98
+    blocker.BrickColor=BrickColor.Random()
+    blocker.Material='Neon'
+    local duh=function(h)
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
           local cf=h.CFrame
@@ -125,7 +125,17 @@ if Mode==Modes[2] then
           dup.Anchored=false
           game.Debris:AddItem(dup,6)
           end
-        end)
+      end
+      blocker.Touched:connect(duh)
+    for i=1,math.random(2,7) do
+      local tf=Glitch:Clone()
+      tf.Parent=workspace
+      tf.Torso.CFrame=User.Torso.CFrame
+      *CFrame.new(math.random(-15,10),math.random(-10,10),math.random(-15,25))
+      *CFrame.new(0,0,1)
+      game.Debris:AddItem(tf,math.random(1,20)/7)
+      tf.Torso.Anchored=true
+      tf.Torso.Touched:connect(duh)
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
     end
