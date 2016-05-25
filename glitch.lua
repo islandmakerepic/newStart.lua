@@ -10,7 +10,7 @@ if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
   if v:findFirstChild("face") then
     v.face:Destroy()
   end
-    if v.Name=='Humanoid' or v:IsA'Hat' or v:IsA'Clothing' then
+    if v.Name=='Humanoid' or v:IsA'Hat' or v:IsA'Clothing' or v.Name=='Shirt Graphic' then
       v:Destroy() 
     end
     if v:IsA'BasePart' then v.CanCollide=false v.Transparency=0.5 colors[v.Name]=v.BrickColor end
