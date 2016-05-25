@@ -105,13 +105,14 @@ if Mode==Modes[2] then
     User['Left Leg'].BrickColor=BrickColor.Black()
     User['Right Leg'].BrickColor=BrickColor.Black()
     local blocker=Instance.new("Part",workspace)
-    blocker.Size=Vector3.new(12,10,25)
-    blocker.CFrame=User.Torso.CFrame
+    blocker.Size=Vector3.new(20,15,20)
+    blocker.CFrame=User.Torso.CFrame*CFrame.Angles(0,math.random(0,200)/100,math.random(0,200)/100)
     blocker.Anchored=true
     blocker.CanCollide=false
     blocker.Transparency=0.98
     blocker.BrickColor=BrickColor.Random()
     blocker.Material='Neon'
+    game.Debrs:AddItem(blocker,0.8)
     local duh=function(h)
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
