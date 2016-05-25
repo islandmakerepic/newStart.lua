@@ -112,7 +112,7 @@ if Mode==Modes[2] then
     blocker.Transparency=0.98
     blocker.BrickColor=BrickColor.Random()
     blocker.Material='Neon'
-    game.Debrs:AddItem(blocker,0.8)
+    game.Debris:AddItem(blocker,0.8)
     local duh=function(h)
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
