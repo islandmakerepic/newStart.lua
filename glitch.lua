@@ -121,11 +121,11 @@ if Mode==Modes[2] then
     CLL.Parent=blocker
     CLL.Anchored=true
     blocker.Transparency=1
-    
-    local duh=function(h)
-      pcall(function()
+  
+local duh=function(h)
+     if not h then return end
       if h.Parent==User or h.Parent.Name=='Glitch' then
-return end
+        return end
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
           local dup=h:clone()
           local cf=h.CFrame
@@ -137,12 +137,9 @@ return end
           dup.CFrame=cf*CFrame.Angles(0,math.rad(180),0)
           dup.Anchored=false
           game.Debris:AddItem(dup,6)
-          end
-
-      
-    
-end)
+        end
 end
+
 for i=1,math.random(2,7) do
       local tf=Glitch:Clone()
       tf.Parent=workspace
