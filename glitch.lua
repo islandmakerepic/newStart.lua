@@ -116,6 +116,7 @@ if Mode==Modes[2] then
     blocker.Material='Neon'
     game.Debris:AddItem(blocker,0.8)
     local duh=function(h)
+      pcall(function()
       if h.Parent==User or h.Parent.Name=='Glitch' then
 return end
         if not named(h,{'Head','Torso','Right Arm','Left Arm',"Right Leg","Left Leg","Base","HumanoidRootPart"}) then
@@ -143,7 +144,9 @@ return end
       tf.Torso.Touched:connect(duh)
       end
     else for i,v in pairs(Glitch:children()) do pcall(function() User[v.Name].BrickColor=v.BrickColor end) end
-    end
+    
+  end)
+  end
 end
 if not Click then User.Humanoid.WalkSpeed=20 end
 if Mode==Modes[3] and Click then
