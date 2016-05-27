@@ -253,7 +253,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   Teleporting=true
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
-  for i=1,50 do
+  for i=1,30 do
     for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Random()
@@ -266,7 +266,7 @@ if Mode==Modes[5] and Click and not Teleporting then
     osht.Torso.CFrame=base*CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     *CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
     osht.Torso.Anchored=true
-    if math.random(7)<3 then wait(0) end
+    if math.random(5)==1 then wait(0) end
   coroutine.wrap(function()
     wait(0)
     for i=1,15,2 do
@@ -284,7 +284,7 @@ for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
       v.Material='Neon'
-      v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(5),0)
+      v.CFrame=v.CFrame*CFrame.new(0,2,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
   wait(0.1)
@@ -322,6 +322,7 @@ for i,v in pairs(osht:children()) do
 end
   wait(0.2)
   osht.Head.BrickColor=BrickColor.Red()
+  wait(0)
   osht.Torso.Anchored=false
   game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
