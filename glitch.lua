@@ -253,6 +253,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   Teleporting=true
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
+  coroutine.wrap(function()
   for i=1,360,10 do
     wait(0)
     local anchor=Instance.new("Part")
@@ -260,12 +261,13 @@ if Mode==Modes[5] and Click and not Teleporting then
     anchor.CanCollide=false
     anchor.Anchored=true
     anchor.Touched:connect(function(h)
+      if h.Parent==User or h.Name==Glitch.Name then return end
       pcall(function() h.Anchored=true end)
     end)
     anchor.Parent=workspace
     anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-25)
     coroutine.wrap(function()
-      wait(0.05)
+      wait(0.1)
       for i=-25,0,1 do
         wait(0)
         anchor.Anchored=false
@@ -277,8 +279,10 @@ if Mode==Modes[5] and Click and not Teleporting then
         anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,i)
       end
       anchor:Destroy()
-      end)()
-    end
+    end)()
+    
+  end
+  end)()
   for i=1,30 do
     for i,v in pairs(User:children()) do
     pcall(function()
