@@ -286,13 +286,24 @@ for i,v in pairs(osht:children()) do
       v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(5),0)
       end)
   end
+ local show= Instance.new("Part",workspace)
+ show.Size=Vector3.new(10,10,10)
+ show.Anchored=true
+ show.Shape='Ball'
+ show.Transparency=0.75
+ show.Material='Neon'
+ show.CFrame=User.Torso.CFrame
+ show.BrickColor=col
+ game.Debris:AddItem(show,0.3)
+ coroutine.wrap(function()
   for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=col
       v.Material='Neon'
   
     end)
-    end
+  end
+  end)()
   wait(0.2)
   wait(0.2)
 for i,v in pairs(osht:children()) do
