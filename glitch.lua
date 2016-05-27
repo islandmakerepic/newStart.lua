@@ -253,7 +253,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   Teleporting=true
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
-  for i=1,100 do
+  for i=1,50 do
     for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Random()
@@ -268,7 +268,7 @@ if Mode==Modes[5] and Click and not Teleporting then
     if math.random(15)<3 then wait(0) end
   coroutine.wrap(function()
     wait(0)
-    for i=1,20,2 do
+    for i=1,15,2 do
       wait(0)
       for i,v in pairs(osht:children()) do
         pcall(function()
