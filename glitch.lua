@@ -259,13 +259,14 @@ if Mode==Modes[5] and Click and not Teleporting then
       v.BrickColor=BrickColor.Random()
       v.Material='Neon'
     end)
-    end
+  end
+  
     local osht=Glitch:clone()
     osht.Parent=workspace
     osht.Torso.CFrame=base*CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     *CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
     osht.Torso.Anchored=true
-    if math.random(15)<3 then wait(0) end
+    if math.random(7)<3 then wait(0) end
   coroutine.wrap(function()
     wait(0)
     for i=1,15,2 do
@@ -277,7 +278,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
 end
-wait(0.2)
+wait(0.4)
 local col=osht.Torso.BrickColor
 for i,v in pairs(osht:children()) do
       pcall(function()
@@ -286,6 +287,7 @@ for i,v in pairs(osht:children()) do
       v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(5),0)
       end)
   end
+  wait(0.1)
  local show= Instance.new("Part",workspace)
  show.Size=Vector3.new(10,10,10)
  show.Anchored=true
@@ -295,7 +297,11 @@ for i,v in pairs(osht:children()) do
  show.CFrame=User.Torso.CFrame
  show.BrickColor=col
  show.CanCollide=false
- game.Debris:AddItem(show,0.3)
+ game.Debris:AddItem(show,0.1)
+ local s2=show:clone()
+ s2.CFrame=osht.Torso.CFrame
+ s2.Parent=show
+ s2.Transparency=0.89
  coroutine.wrap(function()
   for i,v in pairs(User:children()) do
     pcall(function()
