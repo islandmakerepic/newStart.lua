@@ -251,27 +251,23 @@ end
 if Mode==Modes[5] and Click and not Teleporting then
   local base=User.Torso.CFrame
   Teleporting=true
-  for i,v in pairs(User:children()) do
+ 
+  User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
+  for i=1,100 do
+    for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Random()
       v.Material='Neon'
-      coroutine.wrap(function()
-        wait(3)
-        v.BrickColor=colors[v.Name]
-        v.Material='Plastic'
-        end)()
-      end)
-  end
-  User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
-  for i=1,100 do
+    end)
+    end
     local osht=Glitch:clone()
     osht.Parent=workspace
     osht.Torso.CFrame=base*CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     *CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
     osht.Torso.Anchored=true
-    if math.random(5)==1 then wait(0) end
+    if math.random(15)<3 then wait(0) end
   coroutine.wrap(function()
-    wait(0.5)
+    wait(0)
     for i=1,20,2 do
       wait(0)
       for i,v in pairs(osht:children()) do
@@ -280,8 +276,24 @@ if Mode==Modes[5] and Click and not Teleporting then
       v.Material='Neon'
       end)
     end
+end
+ for i,v in pairs(User:children()) do
+    pcall(function()
+      v.BrickColor=BrickColor.Random()
+      v.Material='Neon'
+      coroutine.wrap(function()
+        wait(2)
+        v.BrickColor=colors[v.Name]
+        v.Material='Plastic'
+        end)()
+      end)
   end
-  wait(0)
+for i,v in pairs(osht:children()) do
+        pcall(function()
+      v.BrickColor=BrickColor.Red()
+      v.Material='Neon'
+      end)
+    end
   osht.Head.BrickColor=BrickColor.Red()
   osht.Torso.Anchored=false
   game.Debris:AddItem(osht,2)
