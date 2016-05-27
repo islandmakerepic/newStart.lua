@@ -277,23 +277,28 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
 end
- for i,v in pairs(User:children()) do
-    pcall(function()
-      v.BrickColor=BrickColor.Random()
+local col=osht.Torso.BrickColor
+for i,v in pairs(osht:children()) do
+      pcall(function()
+      v.BrickColor=col
       v.Material='Neon'
-      coroutine.wrap(function()
-        wait(2)
-        v.BrickColor=colors[v.Name]
-        v.Material='Plastic'
-        end)()
       end)
   end
-for i,v in pairs(osht:children()) do
-        pcall(function()
-      v.BrickColor=BrickColor.Red()
+  wait(0)
+ for i,v in pairs(User:children()) do
+    pcall(function()
+      v.BrickColor=col
       v.Material='Neon'
       end)
-    end
+  end
+  wait(0)
+for i,v in pairs(osht:children()) do
+    pcall(function()
+      v.BrickColor=BrickColor.Red()
+      v.Material='Neon'
+    end)
+end
+  
   osht.Head.BrickColor=BrickColor.Red()
   osht.Torso.Anchored=false
   game.Debris:AddItem(osht,2)
