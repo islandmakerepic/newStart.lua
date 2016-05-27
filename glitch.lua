@@ -294,6 +294,7 @@ for i,v in pairs(osht:children()) do
  show.Material='Neon'
  show.CFrame=User.Torso.CFrame
  show.BrickColor=col
+ show.CanCollide=false
  game.Debris:AddItem(show,0.3)
  coroutine.wrap(function()
   for i,v in pairs(User:children()) do
