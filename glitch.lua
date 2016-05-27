@@ -285,8 +285,14 @@ for i,v in pairs(osht:children()) do
       v.Material='Neon'
       end)
   end
-  wait(0)
-  wait(0)
+  for i,v in pairs(User:children()) do
+    pcall(function()
+      v.BrickColor=col
+      v.Material='Neon'
+    end)
+    end
+  wait(0.1)
+  wait(0.1)
 for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Red()
@@ -306,7 +312,8 @@ end
     end
     end
     end)
-    end)()
+  end)()
+  
   end
   wait(0.1)
 Teleporting=false
