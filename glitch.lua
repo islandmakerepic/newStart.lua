@@ -360,8 +360,8 @@ end
   local dieAll=Instance.new("Part",osht.Torso)
   dieAll.Anchored=true
   dieAll.CanCollide=false
-  dieAll.Size=Vector3.new(10,10,10)
-  dieAll.Shape=math.random(3)
+  dieAll.Size=Vector3.new(5,5,5)
+  dieAll.Shape=math.random(0,2)
   dieAll.BrickColor=BrickColor.White()
   dieAll.Transparency=0.8
   dieAll.Material='Neon'
