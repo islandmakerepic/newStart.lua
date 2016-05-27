@@ -254,7 +254,7 @@ if Mode==Modes[5] and Click and not Teleporting then
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
   coroutine.wrap(function()
-  for I=1,360,10 do
+  for I=1,360,15 do
     wait(0)
     local anchor=Instance.new("Part")
     anchor.Size=Vector3.new(5,5,10)
@@ -266,8 +266,9 @@ if Mode==Modes[5] and Click and not Teleporting then
     end)
     anchor.Parent=workspace
     anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
+    anchor.BrickColor=BrickColor.new'Really black'
     coroutine.wrap(function()
-      wait(0.1)
+      wait(1.11)
       for i=-25,0,1 do
         wait(0)
         anchor.Anchored=false
@@ -299,7 +300,7 @@ if Mode==Modes[5] and Click and not Teleporting then
     if math.random(5)==1 then wait(0) end
   coroutine.wrap(function()
     wait(0)
-    for i=1,15,2 do
+    for i=1,20,2 do
       wait(0)
       for i,v in pairs(osht:children()) do
         pcall(function()
@@ -315,7 +316,7 @@ for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
       v.Material='Neon'
-      v.CFrame=v.CFrame*CFrame.new(0,2,0)*CFrame.Angles(0,math.rad(90),0)
+      v.CFrame=v.CFrame*CFrame.new(0,1,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
   end)()
@@ -356,6 +357,28 @@ end
   osht.Head.BrickColor=BrickColor.Red()
   wait(0)
   osht.Torso.Anchored=false
+  local dieAll=Instance.new("Part",osht.Torso)
+  dieAll.Anchored=true
+  dieAll.CanCollide=false
+  dieAll.Size=Vector3.new(10,10,10)
+  dieAll.Shape=math.random(3)
+  dieAll.BrickColor=BrickColor.White()
+  dieAll.Transparency=0.8
+  dieAll.Material='Neon'
+  coroutine.wrap(function()
+     dieAll.Touched:connect(function(h)
+    if not named(h,{"Base","Part"}) then
+      if h.Parent~=User and h.Parent.Name~='Glitch' then
+    h.BrickColor=BrickColor.Random()
+    h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
+    h.Material='Neon'
+    end
+    end
+    end)
+    while dieAll:IsDescendantOf(workspace) and wait(0) do
+      dieAll.CFrame=osht.Torso.CFrame
+      end
+    end)()
   game.Debris:AddItem(osht,2)
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
