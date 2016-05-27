@@ -254,7 +254,7 @@ if Mode==Modes[5] and Click and not Teleporting then
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
   coroutine.wrap(function()
-  for i=1,360,10 do
+  for I=1,360,10 do
     wait(0)
     local anchor=Instance.new("Part")
     anchor.Size=Vector3.new(5,5,10)
@@ -265,18 +265,18 @@ if Mode==Modes[5] and Click and not Teleporting then
       pcall(function() h.Anchored=true end)
     end)
     anchor.Parent=workspace
-    anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-25)
+    anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
     coroutine.wrap(function()
       wait(0.1)
       for i=-25,0,1 do
         wait(0)
         anchor.Anchored=false
-        anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,i)
+        anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,i)
       end
       for i=0,-25,-1 do
         wait(0)
         anchor.Anchored=false
-        anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,i)
+        anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,i)
       end
       anchor:Destroy()
     end)()
