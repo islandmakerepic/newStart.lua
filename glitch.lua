@@ -283,6 +283,7 @@ for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
       v.Material='Neon'
+      v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(5),0)
       end)
   end
   for i,v in pairs(User:children()) do
