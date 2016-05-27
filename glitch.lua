@@ -277,6 +277,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
 end
+wait(0.1)
 local col=osht.Torso.BrickColor
 for i,v in pairs(osht:children()) do
       pcall(function()
@@ -285,12 +286,6 @@ for i,v in pairs(osht:children()) do
       end)
   end
   wait(0)
- for i,v in pairs(User:children()) do
-    pcall(function()
-      v.BrickColor=col
-      v.Material='Neon'
-      end)
-  end
   wait(0)
 for i,v in pairs(osht:children()) do
     pcall(function()
