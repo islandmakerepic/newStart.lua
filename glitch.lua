@@ -253,6 +253,32 @@ if Mode==Modes[5] and Click and not Teleporting then
   Teleporting=true
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
+  for i=1,360,10 do
+    wait(0)
+    local anchor=Instance.new("Part")
+    anchor.Size=Vector3.new(5,5,10)
+    anchor.CanCollide=false
+    anchor.Anchored=true
+    anchor.Touched:connect(function(h)
+      pcall(function() h.Anchored=true end)
+    end)
+    anchor.Parent=workspace
+    anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-25)
+    coroutine.wrap(function()
+      wait(0.05)
+      for i=-25,0,1 do
+        wait(0)
+        anchor.Anchored=false
+        anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,i)
+      end
+      for i=0,-25,-1 do
+        wait(0)
+        anchor.Anchored=false
+        anchor.CFrame=base*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,i)
+      end
+      anchor:Destroy()
+      end)()
+    end
   for i=1,30 do
     for i,v in pairs(User:children()) do
     pcall(function()
@@ -278,8 +304,9 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
 end
-wait(0.4)
+wait(0.5)
 local col=osht.Torso.BrickColor
+coroutine.wrap(function()
 for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
@@ -287,7 +314,8 @@ for i,v in pairs(osht:children()) do
       v.CFrame=v.CFrame*CFrame.new(0,2,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
-  wait(0.1)
+  end)()
+  wait(0.2)
  local show= Instance.new("Part",workspace)
  show.Size=Vector3.new(10,10,10)
  show.Anchored=true
@@ -297,11 +325,12 @@ for i,v in pairs(osht:children()) do
  show.CFrame=User.Torso.CFrame
  show.BrickColor=col
  show.CanCollide=false
- game.Debris:AddItem(show,0.1)
+ game.Debris:AddItem(show,0.2)
  local s2=show:clone()
+ s2.Size=Vector3.new(5,5,5)
  s2.CFrame=osht.Torso.CFrame
  s2.Parent=show
- s2.Transparency=0.89
+ s2.Transparency=0.5
  coroutine.wrap(function()
   for i,v in pairs(User:children()) do
     pcall(function()
@@ -311,8 +340,7 @@ for i,v in pairs(osht:children()) do
     end)
   end
   end)()
-  wait(0.2)
-  wait(0.2)
+  wait(0.6)
 for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Red()
