@@ -289,6 +289,7 @@ for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=col
       v.Material='Neon'
+  
     end)
     end
   wait(0.1)
@@ -297,9 +298,10 @@ for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Red()
       v.Material='Neon'
+
     end)
 end
-  
+  wait(0.2)
   osht.Head.BrickColor=BrickColor.Red()
   osht.Torso.Anchored=false
   game.Debris:AddItem(osht,2)
