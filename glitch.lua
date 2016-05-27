@@ -257,18 +257,19 @@ if Mode==Modes[5] and Click and not Teleporting then
   for I=1,360,15 do
     wait(0)
     local anchor=Instance.new("Part")
-    anchor.Size=Vector3.new(5,5,10)
+    anchor.Size=Vector3.new(5,2,10)
     anchor.CanCollide=false
     anchor.Anchored=true
+    anchor.Transparency=0.15
     anchor.Touched:connect(function(h)
-      if h.Parent==User or h.Name==Glitch.Name then return end
-      pcall(function() h.Anchored=true end)
+      if h.Parent==User or h.Name==Glitch.Name or h.Parent:findFirstChild'DONOTDIE' then return end
+   h.Anchored=true
     end)
     anchor.Parent=workspace
     anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
     anchor.BrickColor=BrickColor.new'Really black'
     coroutine.wrap(function()
-      wait(1.11)
+      wait(0.8)
       for i=-25,0,1 do
         wait(0)
         anchor.Anchored=false
@@ -293,6 +294,7 @@ if Mode==Modes[5] and Click and not Teleporting then
   end
   
     local osht=Glitch:clone()
+    Instance.new("Model",osht).Name='DONOTDIE'
     osht.Parent=workspace
     osht.Torso.CFrame=base*CFrame.Angles(math.rad(math.random(360)),math.rad(360),math.rad(360))
     *CFrame.new(math.random(-5,10),math.random(5,15),math.random(-5,10))
