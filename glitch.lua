@@ -306,13 +306,15 @@ if Mode==Modes[5] and Click and not Teleporting then
       anchor:Destroy()
     end)()
 end
-wait(1)
+wait(0.7)
  local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
   ohHellNo.Anchored=true
   ohHellNo.CanCollide=false
   ohHellNo.CFrame=base
-  game.Debris:AddItem(ohHellNo,4)
+  ohHellNo.Material='Neon'
+  ohHellNo.BrickColor=BrickColor.new'Toothpaste'
+  game.Debris:AddItem(ohHellNo,3)
   local sav=ohHellNo:clone()
   coroutine.wrap(function()
     for i=1,200,12 do
@@ -409,7 +411,7 @@ end
   dieAll.Size=Vector3.new(15,5,5)
   dieAll.Shape=math.random(0,2)
   dieAll.BrickColor=BrickColor.White()
-  dieAll.Transparency=0.8
+  dieAll.Transparency=0.98
   dieAll.Material='Neon'
   coroutine.wrap(function()
      dieAll.Touched:connect(function(h)
