@@ -358,8 +358,9 @@ end)()
     end
 end
 end)()
-wait(0)
+wait(0.1)
 local col=osht.Torso.BrickColor
+wait(0)
 coroutine.wrap(function()
 for i,v in pairs(osht:children()) do
       pcall(function()
@@ -393,7 +394,7 @@ for i,v in pairs(osht:children()) do
     end)
   end
   end)()
-  wait(0.2)
+  wait(0.21)
 for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Red()
