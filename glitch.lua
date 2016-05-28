@@ -402,7 +402,25 @@ end
       end
     end)()
   game.Debris:AddItem(osht,2)
-  local ohHellNo=Instance.new("Part",workspace)
+ 
+  
+  osht.Torso.Touched:connect(function(h)
+    if not named(h,{"Base","Part"}) then
+      if h.Parent~=User and h.Parent.Name~='Glitch' then
+    h.BrickColor=BrickColor.Random()
+    h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
+    h.Material='Neon'
+    end
+    end
+    end)
+  
+  end)()
+  wait(0.1)
+Teleporting=false
+end
+end)()
+wait(1)
+ local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
   ohHellNo.Anchored=true
   ohHellNo.CanCollide=false
@@ -422,18 +440,5 @@ end
       DIEE(ohn)
       end
   end)()
-  
-  osht.Torso.Touched:connect(function(h)
-    if not named(h,{"Base","Part"}) then
-      if h.Parent~=User and h.Parent.Name~='Glitch' then
-    h.BrickColor=BrickColor.Random()
-    h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
-    h.Material='Neon'
-    end
-    end
-    end)
-  
-  end)()
-  wait(0.1)
-Teleporting=false
+end
 end
