@@ -319,7 +319,7 @@ wait(1)
       wait(0)
       local ohn=sav:clone()
       ohn.Parent=workspace
-      ohn.Transparency=0.8
+      ohn.Transparency=0.6
 ohn.Material='Neon'
       ohn.BrickColor=BrickColor.new'Toothpaste'
       ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
@@ -363,7 +363,7 @@ for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
       v.Material='Neon'
-      v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(90),0)
+      v.CFrame=v.CFrame*CFrame.new(0,2,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
   wait(0.2)
@@ -409,7 +409,7 @@ end
   dieAll.Size=Vector3.new(15,5,5)
   dieAll.Shape=math.random(0,2)
   dieAll.BrickColor=BrickColor.White()
-  dieAll.Transparency=0.6
+  dieAll.Transparency=0.8
   dieAll.Material='Neon'
   coroutine.wrap(function()
      dieAll.Touched:connect(function(h)
