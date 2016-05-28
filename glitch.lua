@@ -332,13 +332,8 @@ ohn.Material='Neon'
 end)()
   
   --[[for i=1,30 do
-    for i,v in pairs(User:children()) do
-    pcall(function()
-      v.BrickColor=BrickColor.Random()
-      v.Material='Neon'
-    end)
-  end]]
-  for i=1,15 do
+    ]]
+  for i=1,30 do
     local osht=Glitch:clone()
     Instance.new("Model",osht).Name='DONOTDIE'
     osht.Parent=workspace
@@ -445,6 +440,12 @@ end
 
   wait(0.1)
 Teleporting=false
+for i,v in pairs(User:children()) do
+    pcall(function()
+      v.BrickColor=colors[v.Name]
+      v.Material='Neon'
+    end)
+  end
 end
 
 
