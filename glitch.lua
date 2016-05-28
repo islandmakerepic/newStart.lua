@@ -315,12 +315,12 @@ wait(1)
   game.Debris:AddItem(ohHellNo,4)
   local sav=ohHellNo:clone()
   coroutine.wrap(function()
-    for i=1,200,15 do
+    for i=1,200,12 do
       wait(0)
       local ohn=sav:clone()
       ohn.Parent=workspace
       ohn.Transparency=0.8
---      ohn.Material='Neon'
+ohn.Material='SmoothPlastic'
       ohn.BrickColor=BrickColor.new'Toothpaste'
       ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
       game.Debris:AddItem(ohn,2.5)
