@@ -315,7 +315,7 @@ end)()
       v.Material='Neon'
     end)
   end]]
-  
+  for i=1,20,2 do
     local osht=Glitch:clone()
     Instance.new("Model",osht).Name='DONOTDIE'
     osht.Parent=workspace
@@ -402,7 +402,8 @@ end
     end)
     while dieAll:IsDescendantOf(workspace) and wait(0) do
       dieAll.CFrame=osht.Torso.CFrame
-      end
+    end
+
     end)()
   game.Debris:AddItem(osht,2)
  
@@ -416,11 +417,11 @@ end
     end
     end
     end)
-  
+  end
   end)()
   wait(0.1)
 Teleporting=false
-end
+
 wait(1)
  local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
@@ -443,4 +444,6 @@ wait(1)
       end
   end)()
 end
+end
+
 
