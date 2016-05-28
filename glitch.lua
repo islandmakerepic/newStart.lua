@@ -10,12 +10,12 @@ local DIEE=function(Block)
   local x,y,z=sss.X,sss.Y,sss.Z
   local Area=Block.Position
   for i,v in pairs(workspace:children()) do
-    if v:IsA'BasePart' then
+    if v:IsA'BasePart' and v.Name~='Part' and v.Name~='GlitchPart' and  then
       local diff=(Area-v.Position).magnitude
       if diff<(x+y+z/3)+1 then
         v:breakJoints()
       end
-  elseif v:IsA'Model' then
+  elseif v:IsA'Model' and v~=User and v.Name~='Glitch' then
     local diff=(v:GetModelCFrame().p-Area).magnitude
       if diff<(x+y+z/3)+1 then
         v:breakJoints()
@@ -290,7 +290,7 @@ if Mode==Modes[5] and Click and not Teleporting then
     anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
     anchor.BrickColor=BrickColor.new'Really black'
     coroutine.wrap(function()
-      wait(0.8)
+      wait(0.75)
       for i=-25,0,1 do
         wait(0)
         anchor.Anchored=false
@@ -306,13 +306,13 @@ if Mode==Modes[5] and Click and not Teleporting then
     
   end
   end)()
-  for i=1,30 do
+  --[[for i=1,30 do
     for i,v in pairs(User:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Random()
       v.Material='Neon'
     end)
-  end
+  end]]
   
     local osht=Glitch:clone()
     Instance.new("Model",osht).Name='DONOTDIE'
