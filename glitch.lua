@@ -290,6 +290,8 @@ if Mode==Modes[5] and Click and not Teleporting then
     anchor.Parent=workspace
     anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
     anchor.BrickColor=BrickColor.new'Really black'
+  end
+  end)()
     coroutine.wrap(function()
       wait(0.75)
       for i=-25,0,1 do
@@ -418,7 +420,6 @@ end
   wait(0.1)
 Teleporting=false
 end
-end)()
 wait(1)
  local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
@@ -441,4 +442,4 @@ wait(1)
       end
   end)()
 end
-end
+
