@@ -342,7 +342,6 @@ for i,v in pairs(osht:children()) do
       v.CFrame=v.CFrame*CFrame.new(0,1,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
-  end)()
   wait(0.2)
  local show= Instance.new("Part",workspace)
  show.Size=Vector3.new(10,10,10)
