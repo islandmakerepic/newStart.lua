@@ -290,8 +290,7 @@ if Mode==Modes[5] and Click and not Teleporting then
     anchor.Parent=workspace
     anchor.CFrame=base*CFrame.Angles(0,math.rad(I),0)*CFrame.new(0,0,-25)
     anchor.BrickColor=BrickColor.new'Really black'
-  end
-  end)()
+  
     coroutine.wrap(function()
       wait(0.75)
       for i=-25,0,1 do
@@ -306,6 +305,8 @@ if Mode==Modes[5] and Click and not Teleporting then
       end
       anchor:Destroy()
     end)()
+end
+end)()
   
   --[[for i=1,30 do
     for i,v in pairs(User:children()) do
