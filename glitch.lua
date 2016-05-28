@@ -404,17 +404,18 @@ end
     end)()
   game.Debris:AddItem(osht,2)
   local ohHellNo=Instance.new("Part",workspace)
-  ohHellNo.Size=Vector3.new(5,2.5,5)
+  ohHellNo.Size=Vector3.new(5,15,5)
   ohHellNo.Anchored=true
   ohHellNo.CanCollide=false
   ohHellNo.CFrame=base
   game.Debris:AddItem(ohHellNo,4)
   local sav=ohHellNo:clone()
   coroutine.wrap(function()
-    for i=1,100,2.5 do
+    for i=1,200,15 do
       wait(0)
       local ohn=sav:clone()
       ohn.Parent=workspace
+      ohn.Transparency=0.8
       ohn.Material='Neon'
       ohn.BrickColor=BrickColor.new'Toothpaste'
       ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
