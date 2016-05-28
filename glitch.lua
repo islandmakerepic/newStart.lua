@@ -25,6 +25,7 @@ local DIEE=function(Block)
     end
 end
 
+
 local colors={}
   for i,v in pairs(Glitch:GetChildren()) do
 if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
@@ -439,5 +440,4 @@ end
   end
   wait(0.1)
 Teleporting=false
-end
 end
