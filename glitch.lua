@@ -332,6 +332,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       end)
     end
 end
+end)()
 wait(0.5)
 local col=osht.Torso.BrickColor
 coroutine.wrap(function()
@@ -422,7 +423,8 @@ end
       game.Debris:AddItem(ohn,2.5)
       DIEE(ohn)
       end
-    end)()
+  end)()
+  
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
       if h.Parent~=User and h.Parent.Name~='Glitch' then
