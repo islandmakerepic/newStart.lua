@@ -414,6 +414,9 @@ end
     for i=1,100,2.5 do
       wait(0)
       local ohn=sav:clone()
+      ohn.Parent=workspace
+      ohn.Material='Neon'
+      ohn.BrickColor=BrickColor.new'Toothpaste'
       ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
       DIEE(ohn)
       end
