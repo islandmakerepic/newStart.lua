@@ -10,7 +10,7 @@ local DIEE=function(Block)
   local x,y,z=sss.X,sss.Y,sss.Z
   local Area=Block.Position
   for i,v in pairs(workspace:children()) do
-    if v:IsA'BasePart' and v.Name~='Part' and v.Name~='GlitchPart' and  then
+    if v:IsA'BasePart' and v.Name~='Part' and v.Name~='GlitchPart' then
       local diff=(Area-v.Position).magnitude
       if diff<(x+y+z/3)+1 then
         v:breakJoints()
