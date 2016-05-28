@@ -271,7 +271,7 @@ if Mode==Modes[4] and Click then
   end
 end
 if Mode==Modes[5] and Click and not Teleporting then
-  local base=User.Torso.CFrame
+  base=User.Torso.CFrame
   Teleporting=true
  
   User.Torso.CFrame=CFrame.new(Cursor.Hit.p)
