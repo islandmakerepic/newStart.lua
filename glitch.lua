@@ -336,7 +336,7 @@ end)()
       v.Material='Neon'
     end)
   end]]
-  for i=1,20,2 do
+  for i=0,25 do
     local osht=Glitch:clone()
     Instance.new("Model",osht).Name='DONOTDIE'
     osht.Parent=workspace
