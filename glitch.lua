@@ -4,6 +4,27 @@ local Cursor = Player:GetMouse()
   User.Archivable=true
 local Glitch = User:clone()
 Glitch.Name='Glitch'
+
+local DIEE=function(Block)
+  local sss=Block.Size
+  local x,y,z=sss.X,sss.Y,sss.Z
+  local Area=Block.Position
+  for i,v in pairs(workspace:children()) do
+    if v:IsA'BasePart' then
+      local diff=(Area-v.Position).magnitude
+      if diff<(x+y+z/3)+1 then
+        v:breakJoints()
+      end
+  elseif v:IsA'Model' then
+    local diff=(v:GetModelCFrame().p-Area).magnitude
+      if diff<(x+y+z/3)+1 then
+        v:breakJoints()
+      end
+    end
+    
+    end
+end
+
 local colors={}
   for i,v in pairs(Glitch:GetChildren()) do
 if v:IsA'Script' or v:IsA'LocalScript' then v:Destroy() end
@@ -382,6 +403,21 @@ end
       end
     end)()
   game.Debris:AddItem(osht,2)
+  local ohHellNo=Instance.new("Part",workspace)
+  ohHellNo.Size=Vector3.new(5,2.5,5)
+  ohHellNo.Anchored=true
+  ohHellNo.CanCollide=false
+  ohHellNo.CFrame=base
+  game.Debris:AddItem(ohHellNo,4)
+  local sav=ohHellNo:clone()
+  coroutine.wrap(function()
+    for i=1,100,2.5 do
+      wait(0)
+      local ohn=sav:clone()
+      ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
+      DIEE(ohn)
+      end
+    end)()
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
       if h.Parent~=User and h.Parent.Name~='Glitch' then
