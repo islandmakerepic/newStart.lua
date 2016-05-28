@@ -320,7 +320,7 @@ wait(1)
       local ohn=sav:clone()
       ohn.Parent=workspace
       ohn.Transparency=0.8
-ohn.Material='SmoothPlastic'
+ohn.Material='Neon'
       ohn.BrickColor=BrickColor.new'Toothpaste'
       ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
       game.Debris:AddItem(ohn,2.5)
@@ -336,7 +336,7 @@ end)()
       v.Material='Neon'
     end)
   end]]
-  for i=0,25 do
+  for i=1,15 do
     local osht=Glitch:clone()
     Instance.new("Model",osht).Name='DONOTDIE'
     osht.Parent=workspace
@@ -363,7 +363,7 @@ for i,v in pairs(osht:children()) do
       pcall(function()
       v.BrickColor=col
       v.Material='Neon'
-      v.CFrame=v.CFrame*CFrame.new(0,1,0)*CFrame.Angles(0,math.rad(90),0)
+      v.CFrame=v.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(90),0)
       end)
   end
   wait(0.2)
@@ -406,10 +406,10 @@ end
   local dieAll=Instance.new("Part",osht.Torso)
   dieAll.Anchored=true
   dieAll.CanCollide=false
-  dieAll.Size=Vector3.new(5,5,5)
+  dieAll.Size=Vector3.new(15,5,5)
   dieAll.Shape=math.random(0,2)
   dieAll.BrickColor=BrickColor.White()
-  dieAll.Transparency=0.8
+  dieAll.Transparency=0.6
   dieAll.Material='Neon'
   coroutine.wrap(function()
      dieAll.Touched:connect(function(h)
