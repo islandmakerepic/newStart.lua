@@ -356,7 +356,7 @@ end)()
     end
 end
 end)()
-wait(0.5)
+wait(0)
 local col=osht.Torso.BrickColor
 coroutine.wrap(function()
 for i,v in pairs(osht:children()) do
