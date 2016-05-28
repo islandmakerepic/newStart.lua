@@ -304,9 +304,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       end
       anchor:Destroy()
     end)()
-    
   
-  end)()
   --[[for i=1,30 do
     for i,v in pairs(User:children()) do
     pcall(function()
