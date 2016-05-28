@@ -306,7 +306,7 @@ if Mode==Modes[5] and Click and not Teleporting then
       anchor:Destroy()
     end)()
 end
-wait(0.7)
+wait(0.4)
  local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
   ohHellNo.Anchored=true
