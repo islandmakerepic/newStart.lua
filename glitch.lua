@@ -422,6 +422,8 @@ end
   wait(0.1)
 Teleporting=false
 
+
+end
 wait(1)
  local ohHellNo=Instance.new("Part",workspace)
   ohHellNo.Size=Vector3.new(5,15,5)
@@ -443,7 +445,6 @@ wait(1)
       DIEE(ohn)
       end
   end)()
-end
 end
 
 
