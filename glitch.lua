@@ -306,6 +306,27 @@ if Mode==Modes[5] and Click and not Teleporting then
       anchor:Destroy()
     end)()
 end
+wait(1)
+ local ohHellNo=Instance.new("Part",workspace)
+  ohHellNo.Size=Vector3.new(5,15,5)
+  ohHellNo.Anchored=true
+  ohHellNo.CanCollide=false
+  ohHellNo.CFrame=base
+  game.Debris:AddItem(ohHellNo,4)
+  local sav=ohHellNo:clone()
+  coroutine.wrap(function()
+    for i=1,200,15 do
+      wait(0)
+      local ohn=sav:clone()
+      ohn.Parent=workspace
+      ohn.Transparency=0.8
+--      ohn.Material='Neon'
+      ohn.BrickColor=BrickColor.new'Toothpaste'
+      ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
+      game.Debris:AddItem(ohn,2.5)
+      DIEE(ohn)
+      end
+  end)()
 end)()
   
   --[[for i=1,30 do
@@ -370,7 +391,7 @@ for i,v in pairs(osht:children()) do
     end)
   end
   end)()
-  wait(0.6)
+  wait(0.2)
 for i,v in pairs(osht:children()) do
     pcall(function()
       v.BrickColor=BrickColor.Red()
@@ -406,46 +427,23 @@ end
 
     end)()
   game.Debris:AddItem(osht,2)
- 
-  
   osht.Torso.Touched:connect(function(h)
     if not named(h,{"Base","Part"}) then
       if h.Parent~=User and h.Parent.Name~='Glitch' then
     h.BrickColor=BrickColor.Random()
     h.Size=Vector3.new(math.random(1,10),math.random(2,5),math.random(1,10))
     h.Material='Neon'
+      end
     end
-    end
-    end)
+  end)
+  
   end)()
+end
 
   wait(0.1)
 Teleporting=false
-
-
-end
-wait(1)
- local ohHellNo=Instance.new("Part",workspace)
-  ohHellNo.Size=Vector3.new(5,15,5)
-  ohHellNo.Anchored=true
-  ohHellNo.CanCollide=false
-  ohHellNo.CFrame=base
-  game.Debris:AddItem(ohHellNo,4)
-  local sav=ohHellNo:clone()
-  coroutine.wrap(function()
-    for i=1,200,15 do
-      wait(0)
-      local ohn=sav:clone()
-      ohn.Parent=workspace
-      ohn.Transparency=0.8
---      ohn.Material='Neon'
-      ohn.BrickColor=BrickColor.new'Toothpaste'
-      ohn.CFrame=base*CFrame.new(0,i,0)*CFrame.Angles(0,math.rad(i*3.6),0)
-      game.Debris:AddItem(ohn,2.5)
-      DIEE(ohn)
-      end
-  end)()
 end
 
 
 end
+
