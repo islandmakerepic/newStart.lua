@@ -20,7 +20,7 @@ owner['Left Arm']:Destroy()
 local hrp=owner['HumanoidRootPart']
 local b=owner.Torso.CFrame
 for i=-80,80,20 do
-hrp.CFrame=b*CFrame.Angles(math.rad(90),0,0)
+hrp.CFrame=b*CFrame.Angles(math.rad(-27),0,0)
 local c=cyl:clone()
 c.Parent=workspace
 c.CFrame=owner.Torso.CFrame*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-10)*CFrame.Angles(0,math.rad(90),0)
