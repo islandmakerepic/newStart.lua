@@ -19,6 +19,7 @@ arm2:breakJoints()
 owner['Left Arm']:Destroy()
 local hrp=owner['HumanoidRootPart']
 local b=owner.Torso.CFrame
+hrp.Anchored=true
 for i=-80,80,20 do
 hrp.CFrame=b*CFrame.Angles(math.rad(-27),0,0)
 local c=cyl:clone()
@@ -38,3 +39,4 @@ local ok=cyls[i]
 ok.Material='Neon'
 arm2.CFrame=CFrame.new( (owner.Torso.CFrame*CFrame.new(-1.4,0,0)).p , (ok.CFrame*CFrame.new(-1,0,0)).p )*CFrame.new(0,0,-1)
 end
+hrp.Anchored=false
