@@ -40,6 +40,8 @@ ok.Material='Neon'
 arm2.CFrame=CFrame.new( (b*CFrame.new(-1.4,0,0)).p , (ok.CFrame*CFrame.new(-1,0,0)).p )*CFrame.new(0,0,-1)
 end
 print'over'
+owner.Humanoid.Jump=true
+wait(0)
 hrp.Anchored=false
-local aimat=(cyls[3])
+local aimat=(cyls[5])
 arm.CFrame=CFrame.new((b*CFrame.new(1.4,0,0)).p,aimat.CFrame.p)*CFrame.new(0,0,-1)
