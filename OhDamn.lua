@@ -42,4 +42,4 @@ end
 print'over'
 hrp.Anchored=false
 local aimat=(cyls[3])
-arm2.CFrame=CFrame.new((b*CFrame.new(-1.4,0,0)).p,aimat.CFrame.p)*CFrame.new(0,0,-1)
+arm.CFrame=CFrame.new((b*CFrame.new(-1.4,0,0)).p,aimat.CFrame.p)*CFrame.new(0,0,-1)
