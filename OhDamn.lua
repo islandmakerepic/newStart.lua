@@ -24,9 +24,9 @@ for i=-80,80,20 do
 hrp.CFrame=b*CFrame.Angles(math.rad(-27),0,0)
 local c=cyl:clone()
 c.Parent=workspace
-c.CFrame=owner.Torso.CFrame*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-10)*CFrame.Angles(0,math.rad(90),0)
+c.CFrame=b*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-10)*CFrame.Angles(0,math.rad(90),0)
 c.Anchored=true
-arm.CFrame=CFrame.new((owner.Torso.CFrame*CFrame.new(1.3,0,0)).p,(c.CFrame*CFrame.new(1,0,0)).p)*CFrame.new(0,0,-1)
+arm.CFrame=CFrame.new((b*CFrame.new(1.3,0,0)).p,(c.CFrame*CFrame.new(1,0,0)).p)*CFrame.new(0,0,-1)
 cyls[#cyls+1]=c
 wait(0.1)
 end
@@ -37,6 +37,6 @@ for i=#cyls,1,-1 do
   wait(0.1)
 local ok=cyls[i]
 ok.Material='Neon'
-arm2.CFrame=CFrame.new( (owner.Torso.CFrame*CFrame.new(-1.4,0,0)).p , (ok.CFrame*CFrame.new(-1,0,0)).p )*CFrame.new(0,0,-1)
+arm2.CFrame=CFrame.new( (b*CFrame.new(-1.4,0,0)).p , (ok.CFrame*CFrame.new(-1,0,0)).p )*CFrame.new(0,0,-1)
 end
 hrp.Anchored=false
