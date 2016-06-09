@@ -16,7 +16,7 @@ local Arm2=Arm:clone()
 
 Arm2.Parent=char
 Arm2.Name='Part2'
-Arm2:breakJoints()
+Arm2.Weld:Destroy()
 local Weld2=Instance.new("Weld",Arm2)
 Weld2.Part0=Arm
 Weld2.Part1=Arm2
