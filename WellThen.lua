@@ -12,7 +12,7 @@ local Weld=Instance.new("Weld",Arm)
 Weld.Part0=Arm
 Weld.Part1=char.Head
 Weld.C0=CFrame.new(-1.6,0.675,0)*CFrame.Angles(0,0,math.rad(20))
-local Arm2=arm:clone()
+--[[local Arm2=arm:clone()
 
 Arm2.Parent=char
 Arm2.Name='Part2'
@@ -23,3 +23,4 @@ Weld2.Part0=Arm
 Weld2.Part1=Arm2
 Weld2.C0=CFrame.new(0,-1,0)
 local c=Instance.new("Part",workspace)
+]]
