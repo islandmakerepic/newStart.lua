@@ -13,8 +13,10 @@ Weld.Part0=Arm
 Weld.Part1=char.Head
 Weld.C0=CFrame.new(-1.6,0.675,0)*CFrame.Angles(0,0,math.rad(20))
 local Arm2=Arm:clone()
+
 Arm2.Parent=char
 Arm2.Name='Part2'
+Arm2:breakJoints()
 local Weld2=Instance.new("Weld",Arm2)
 Weld2.Part0=Arm
 Weld2.Part1=Arm2
