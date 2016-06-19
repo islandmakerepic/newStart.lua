@@ -23,8 +23,13 @@ Instance.new("Hint",workspace).Text=garble(math.random(1,3)==1 and 'error' or 'p
 end
 end
 end
-
-while wait(3) do
+workspace.ChildAdded:connect(function(c)
+  wait(0)
+  if c:IsA'Hint' or c:IsA'Message' then game.Debris:AddItem(c,1) end
+  end)
+while wait(0.3) do
+if math.random(1,3)==3 then
 what()
+end
 end
 
