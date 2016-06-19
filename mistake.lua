@@ -10,14 +10,14 @@ local s=math.random(1,#text)
 ct=ct..text:sub(s,s):upper()
 end
 
-end
+  end
 return ct
 end
 
 what=function()
 if math.random(3)==1 then
 if math.random(10)>5 then
-Instance.new("Message",workspace).Text=garble(ath.random(1,3)==1 and 'problem' or 'mistake')
+Instance.new("Message",workspace).Text=garble(math.random(1,3)==1 and 'problem' or 'mistake')
 else
 Instance.new("Hint",workspace).Text=garble(math.random(1,3)==1 and 'error' or 'problem')
 end
