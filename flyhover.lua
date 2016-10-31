@@ -19,6 +19,7 @@ local flying=false
 m.Button1Down:connect(function()
 tor.CFrame=CFrame.new(tor.CFrame.p,m.Hit.p)
 flying=true
+   flymation()
 end)
 m.Button1Up:connect(function()
 flying=false
@@ -36,7 +37,6 @@ while wait(0) do
 if flying then
 shh(OMG)
 tor.Velocity=tor.CFrame.lookVector*100
-flymation()
 else
 tor.Velocity=Vector3.new(0,0,0)
 end
