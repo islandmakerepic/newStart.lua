@@ -60,6 +60,8 @@ pos = 15/2
 lazer.CFrame = CFrame.new(c.Torso.Position,mouse.Hit.p)
 lazer.CFrame = lazer.CFrame*CFrame.new(0,0,mag>0 and lazer.Size.Z/2 or -lazer.Size.Z/2)
 lazer.CanCollide = false
+					lazer.Anchored=true
+					lazer.BrickColor=BrickColor.Random()
  lazer.Touched:connect(function(v)
 targ = (v.Parent:findFirstChild("Humanoid")~=nil and v.Parent or nil)
 if targ==c then
@@ -126,7 +128,7 @@ f()
   end
 
 funcc = coroutine.wrap(function()
-wait()
+wait(0)
 lazer.CFrame = CFrame.new(c.Torso.Position,gm.Hit.p)
 lazer.CFrame = lazer.CFrame*CFrame.new(0,0,mag <0 and pos or -pos)
 local a = Instance.new("Part",Workspace)
@@ -136,7 +138,7 @@ a.Anchored = true
 a.CanCollide = false
 a.CFrame = lazer.CFrame*CFrame.new(0,0,mag>0 and -lazer.Size.Z/2 or lazer.Size.Z/2)
 Instance.new("Fire",a)
-game.Debris:AddItem(a,0.1)
+game.Debris:AddItem(a,0)
 end)
 funcc()
  end
