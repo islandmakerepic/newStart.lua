@@ -7,7 +7,7 @@ local t=Instance.new("TextLabel",GUI)
 t.Size=UDim2.new(1,0,0.1,0)
 txt='Viewing '
 t.Text=txt..'0'
-
+local mov=false
 local cam=workspace.CurrentCamera
 
 Instance.new("CylinderMesh",cyl)
@@ -27,7 +27,7 @@ m.KeyDown:connect(function(k)
       cam.CameraSubject=char.Humanoid 
      return 
     end
-    
+    if k=='m' then move=not move end
     if k=='q' then
       if selected==0 then 
         selected=#clones+1
@@ -79,3 +79,13 @@ end
 
 
 end)
+
+
+
+while wait(0) do
+    if move and cam.CameraSubject~=char.Humanoid then
+        local hum=cam.CameraSubject
+        if hum and hum.Name=='Humanoid' then
+           hum:MoveTo(m.Hit.p)
+        end
+    end
