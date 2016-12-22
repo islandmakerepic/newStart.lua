@@ -26,13 +26,10 @@ nc.Parent=workspace
 nc:MakeJoints()
 nc.Torso.CFrame=char.Torso.CFrame*CFrame.new(i,0,0)
 clones[#clones+1]=nc
-                                    
-
-    for i=1,#clones do
-      local z=i%2==0 and -i or -i+(math.random(-1,1)*5)
-      clones[i].Torso.CFrame=clones[i].Torso.CFrame*CFrame.new(0,0,z)
-      end
- coroutine.wrap(function()
+  local II=#clones
+local z=II%2==0 and -II or -II+(math.random(-1,1)*5)
+      clones[II].Torso.CFrame=clones[II].Torso.CFrame*CFrame.new(0,0,z)                  
+coroutine.wrap(function()
 pcall(function()
 for i=1,10 do
  local CLL=cyl:clone()
@@ -44,5 +41,12 @@ game.Debris:AddItem(CLL,0.3)
 wait(0)
 end
   end)                                               end)()
+          end                          
+
+
+
+
+
+
 end
 end)
