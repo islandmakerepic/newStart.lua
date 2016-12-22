@@ -2,8 +2,9 @@ local plr=game.Players.LocalPlayer
 local cyl=Instance.new("Part")
 cyl.Size=Vector3.new(4,0.2,4)
 cyl.Transparency=0.5
-cyl.Scale=Vector3.new(1,1,1)
+
 Instance.new("CylinderMesh",cyl)
+cyl.Mesh.Scale=Vector3.new(1,1,1)
 on=false
 
 local m=plr:GetMouse()
