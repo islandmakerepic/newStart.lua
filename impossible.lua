@@ -32,7 +32,8 @@ clones[#clones+1]=nc
       local z=i%2==0 and -i or -i+(math.random(-1,1)*5)
       clones[i].Torso.CFrame=clones[i].Torso.CFrame*CFrame.new(0,0,z)
       end
-                                    coroutine.wrap(function()
+ coroutine.wrap(function()
+pcall(function()
 for i=1,10 do
  local CLL=cyl:clone()
 CLL.Anchored=true
@@ -42,6 +43,6 @@ CLL.Parent=workspace
 game.Debris:AddItem(CLL,0.3)
 wait(0)
 end
-                                                            end)()
+  end)                                               end)()
 end
 end)
