@@ -14,7 +14,7 @@ local clones={}
 m.Button1Down:connect(function()
 if on then for i,v in pairs(clones) do v:Destroy() end return end
 on=true
-for i=-10,10,3 do
+for i=-30,30,7.5 do
 local nc=dupe:clone()
 nc.Parent=workspace
 nc:MakeJoints()
