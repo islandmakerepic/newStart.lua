@@ -53,7 +53,7 @@ CLL.Anchored=true
             CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
           for i=1,360,36 do
                 wait(0)
-                CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(0,0,,math.rad(90))*CFrame.Angles(0,0,math.rad(i))
+                CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(0,0,math.rad(90))*CFrame.Angles(0,0,math.rad(i))
                 end
             game.Debris:AddItem(CLL,1)
             end
