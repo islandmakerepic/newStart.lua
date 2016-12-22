@@ -1,5 +1,5 @@
 local plr=game.Players.LocalPlayer
-local cyl=Instance.new("Part)
+local cyl=Instance.new("Part")
 cyl.Size=Vector3.new(4,0.2,4)
 Instance.new("CylinderMesh",cyl)
 on=false
