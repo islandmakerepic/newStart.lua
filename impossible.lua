@@ -16,7 +16,7 @@ local dupe=char:clone()
 local clones={}
 
 m.Button1Down:connect(function()
-if on then for i,v in pairs(clones) do v:Destroy() end on=false return end
+if on then for i,v in pairs(clones) do v:Destroy() end on=false clones={} return end
 on=true
 
 for i=-25,25,7.5 do
