@@ -52,11 +52,13 @@ CLL.Anchored=true
             CLL.Parent=workspace
             CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
             CLL.Material='Metal'
+            CLL.Size=CLL.Size-Vector3.new(1,1,1)
           for i=1,360,36 do
                 
                 wait(0)
-                local fig=i<180 and i/180 or -(i/2)/180
-                CLL.Size=CLL.Size+Vector3.new(())
+                local fig=((i<180 and i/180) or (-(i/2)/180))
+                
+                CLL.Size=CLL.Size+Vector3.new((fig),fig,fig)
                 CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(math.rad(90),0,0)*CFrame.Angles(0,math.rad(i),0)
                 end
             game.Debris:AddItem(CLL,1)
