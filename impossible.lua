@@ -51,6 +51,7 @@ CLL.Anchored=true
             CLL.CanCollide=false
             CLL.Parent=workspace
             CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
+            CLL.Material='Metal'
           for i=1,360,36 do
                 wait(0)
                 CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(math.rad(90),0,0)*CFrame.Angles(0,math.rad(i),0)
