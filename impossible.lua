@@ -43,15 +43,19 @@ m.KeyDown:connect(function(k)
     cam.CameraSubject=clones[selected] and clones[selected]:findFirstChild'Humanoid' or char.Humanoid
     t.Text=txt..tostring(selected)
         if k=='q' or k=='e' and selected~=0 and #clones~=0 and clones[selected] then
-            local CLL=cyl:clone()
+            pcall(function() leded:Destroy()end)
+           
+            leded=cyl:clone()
+            local CLL=leded
 CLL.Anchored=true
             CLL.CanCollide=false
             CLL.Parent=workspace
             CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
           for i=1,360,36 do
                 wait(0)
-                CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(0,math.rad(i),math.rad(90))
+                CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(math.rad(i),0,math.rad(90))
                 end
+            game.Debris:AddItem(CLL,1)
             end
 end)
 
