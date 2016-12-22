@@ -20,6 +20,7 @@ if on then for i,v in pairs(clones) do v:Destroy() end on=false clones={} return
 on=true
 
 for i=-25,25,7.5 do
+                                    wait(0)
 local nc=dupe:clone()
 nc.Parent=workspace
             nc:MoveTo(Vector3.new(0,0,0))
