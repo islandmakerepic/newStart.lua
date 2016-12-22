@@ -2,6 +2,10 @@ local plr=game.Players.LocalPlayer
 local cyl=Instance.new("Part")
 cyl.Size=Vector3.new(4,0.2,4)
 cyl.Transparency=0.5
+local GUI=Instance.new("ScreenGui",plr.PlayerGui)
+local t=Instance.new("TextLabel",GU)
+txt='Viewing '
+t.Text=txt..'0'
 
 Instance.new("CylinderMesh",cyl)
 cyl.BrickColor=BrickColor.New'Toothpaste'
@@ -14,6 +18,28 @@ char.Archivable=true
 local dupe=char:clone()
 
 local clones={}
+local selected=0
+m.KeyDown:connect(function(k)
+    if #clones==0 then 
+      cam.CameraSubject=char.Humanoid 
+     return 
+    end
+    
+    if k=='q' then
+      if selected==0 then 
+        selected=#clones+1
+      end
+      
+      selected=selected-1
+    elseif k=='e' then
+    if selected>=#clones then 
+      selected=-1 
+    end
+    selected=selected+1
+    end
+    cam.CameraSubject=clones[i] and clones[i]:findFirstChild'Humanoid' or char.Humanoid
+    t.Text=txt..tostring(selected)
+end)
 
 m.Button1Down:connect(function()
 if on then for i,v in pairs(clones) do v:Destroy() end on=false clones={} return end
