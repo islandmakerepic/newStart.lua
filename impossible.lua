@@ -22,7 +22,7 @@ nc.Torso.CFrame=char.Torso.CFrame*CFrame.new(i,0,0)
 clones[#clones+1]=nc
 end
     for i=1,#clones do
-      local z=tostring(i/2):match(".") and -i or -i+(i/2) 
+      local z=i%2==0 and -i or -i+(-i/2)
       clones[i].Torso.CFrame=clones[i].Torso.CFrame*CFrame.new(0,0,z)
       end
 end)
