@@ -42,6 +42,17 @@ m.KeyDown:connect(function(k)
     end
     cam.CameraSubject=clones[selected] and clones[selected]:findFirstChild'Humanoid' or char.Humanoid
     t.Text=txt..tostring(selected)
+        if k=='q' or k=='e' and selected~=0 and #clones~=0 and clones[selected] then
+            local CLL=cyl:clone()
+CLL.Anchored=true
+            CLL.CanCollide=false
+            CLL.Parent=workspace
+            CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
+          for i=1,360,36 do
+                wait(0)
+                CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)*CFrame.Angles(0,math.rad(i),math.rad(90))
+                end
+            end
 end)
 
 m.Button1Down:connect(function()
