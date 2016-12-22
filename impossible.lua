@@ -2,6 +2,7 @@ local plr=game.Players.LocalPlayer
 local cyl=Instance.new("Part")
 cyl.Size=Vector3.new(4,0.2,4)
 cyl.Transparency=0.5
+cyl.Scale=Vector3.new(1,1,1)
 Instance.new("CylinderMesh",cyl)
 on=false
 
@@ -28,7 +29,7 @@ for i=1,5 do
  local CLL=cyl:clone()
 CLL.Anchored=true
 CLL.CanCollide=false
-  CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-1.5+i,0)
+  CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-1+i,0)
 game.Debris:AddItem(CLL,0.3)
 wait(0)
 end
