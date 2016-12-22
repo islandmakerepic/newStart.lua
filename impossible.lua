@@ -53,6 +53,7 @@ CLL.Anchored=true
             CLL.CFrame=clones[selected].Torso.CFrame*CFrame.new(0,0,-1)
             CLL.Material='Metal'
             CLL.Size=CLL.Size-Vector3.new(1,1,1)
+            CLL.Transparency=0.1
           for i=1,360,36 do
                 
                 wait(0)
