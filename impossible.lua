@@ -31,14 +31,14 @@ clones[#clones+1]=nc
       local z=i%2==0 and -i or -i+(math.random(-1,1)*5)
       clones[i].Torso.CFrame=clones[i].Torso.CFrame*CFrame.new(0,0,z)
       end
-                                    for i=1,5 do
+for i=1,25 do
  local CLL=cyl:clone()
 CLL.Anchored=true
 CLL.CanCollide=false
 CLL.Parent=workspace
-  CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-1+i,0)
-game.Debris:AddItem(CLL,0.3)
-wait(0)
+  CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-1+i/5,0)
+game.Debris:AddItem(CLL,0.6)
+wait(0.000001)
 end
 end
 end)
