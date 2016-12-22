@@ -4,8 +4,11 @@ cyl.Size=Vector3.new(4,0.2,4)
 cyl.Transparency=0.5
 local GUI=Instance.new("ScreenGui",plr.PlayerGui)
 local t=Instance.new("TextLabel",GU)
+t.Size=UDim2.new(1,0,0.1,0)
 txt='Viewing '
 t.Text=txt..'0'
+
+local cam=workspace.CurrentCamera
 
 Instance.new("CylinderMesh",cyl)
 cyl.BrickColor=BrickColor.New'Toothpaste'
