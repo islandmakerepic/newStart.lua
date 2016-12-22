@@ -89,3 +89,4 @@ while wait(0) do
            hum:MoveTo(m.Hit.p)
         end
     end
+end
