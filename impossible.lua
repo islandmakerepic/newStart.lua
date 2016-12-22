@@ -17,6 +17,7 @@ on=true
 for i=-25,25,7.5 do
 local nc=dupe:clone()
 nc.Parent=workspace
+            nc:MoveTo(Vector3.new(0,0,0))
 nc:MakeJoints()
 nc.Torso.CFrame=char.Torso.CFrame*CFrame.new(i,0,0)
 clones[#clones+1]=nc
