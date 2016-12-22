@@ -4,6 +4,7 @@ cyl.Size=Vector3.new(4,0.2,4)
 cyl.Transparency=0.5
 
 Instance.new("CylinderMesh",cyl)
+cyl.BrickColor=BrickColor.New'Toothpaste'
 cyl.Mesh.Scale=Vector3.new(1,1,1)
 on=false
 
@@ -15,7 +16,7 @@ local dupe=char:clone()
 local clones={}
 
 m.Button1Down:connect(function()
-if on then for i,v in pairs(clones) do v:Destroy() end return end
+if on then for i,v in pairs(clones) do v:Destroy() end on=false return end
 on=true
 
 for i=-25,25,7.5 do
@@ -31,14 +32,16 @@ clones[#clones+1]=nc
       local z=i%2==0 and -i or -i+(math.random(-1,1)*5)
       clones[i].Torso.CFrame=clones[i].Torso.CFrame*CFrame.new(0,0,z)
       end
+                                    coroutine.wrap(function()
 for i=1,10 do
  local CLL=cyl:clone()
 CLL.Anchored=true
 CLL.CanCollide=false
 CLL.Parent=workspace
   CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-3+i/2,0)
-game.Debris:AddItem(CLL,0.6)
-wait(0.000001)
+game.Debris:AddItem(CLL,0.3)
+wait(0)
 end
+                                                            end)()
 end
 end)
