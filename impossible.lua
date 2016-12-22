@@ -35,6 +35,7 @@ clones[#clones+1]=nc
  local CLL=cyl:clone()
 CLL.Anchored=true
 CLL.CanCollide=false
+CLL.Parent=workspace
   CLL.CFrame=nc.Torso.CFrame*CFrame.new(0,-1+i,0)
 game.Debris:AddItem(CLL,0.3)
 wait(0)
