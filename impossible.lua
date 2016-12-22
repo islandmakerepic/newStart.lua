@@ -40,7 +40,7 @@ m.KeyDown:connect(function(k)
     end
     selected=selected+1
     end
-    cam.CameraSubject=clones[i] and clones[i]:findFirstChild'Humanoid' or char.Humanoid
+    cam.CameraSubject=clones[selected] and clones[selected]:findFirstChild'Humanoid' or char.Humanoid
     t.Text=txt..tostring(selected)
 end)
 
