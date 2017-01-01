@@ -109,8 +109,8 @@ local Eat=function(CHARAC)
   local AAA=COPY:Clone()
     AAA.Parent=CHARAC
     AAA.Name='INMABELLY'
-    end
   inbelly[#inbelly+1]=CHARAC
+    end
   end
 
 
