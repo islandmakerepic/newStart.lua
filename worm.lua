@@ -2,6 +2,7 @@ local cam=workspace.CurrentCamera
 local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
 local inbelly={}
+local r=function() return math.random(-360,360) end
 local Torso=plr.Character.Torso:clone()
 local spit=function()
   local chr=inbelly[#inbelly]
@@ -35,7 +36,7 @@ end
 
 wait(0.1)
 script.Parent=gui
-local r=function() return math.random(-360,360) end
+
 
 local incam=false
 
