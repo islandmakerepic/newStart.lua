@@ -16,6 +16,9 @@ local mou=plr:GetMouse()
 mou.KeyDown:connect(function(K)
 if K=='t' then
 change()
+if not incam then
+plr.Character.Torso.CFrame=Torso.CFrame                                
+end
 end
 end)
 local Torso=plr.Character.Torso:clone()
@@ -40,13 +43,7 @@ plr.Character.Humanoid.WalkSpeed=incam and 32 or 16
 end
 
 if incam then
-    if plr.Character.Torso.CFrame.Y-workspace.Base.CFrame.Y<900 then
-            if incam then
-     plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1001,0)
-                else
-                plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-1001,0)
-                end
-      end
+
 local Block=Instance.new("Part",workspace.Base)
 Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
