@@ -84,11 +84,11 @@ Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
 Block.Material=Mat
 Block.BrickColor=BrickColor.new(Colorr)
-    local cl=Block:Clone()
+   --[[ local cl=Block:Clone()
     cl.Parent=Block
     cl.Size=Vector3.new(3,3,NUM)
     cl.CFrame=CFrame.new((Torso.CFrame*CFrame.new(0,-4.2,-1)).p,(Torso.CFrame*CFrame.new(0,-4.2,-1-NUM)).p)*CFrame.new(0,0,-NUM)
-    Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)
+    Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)]]
 Block.CFrame=Torso.CFrame*CFrame.new(math.random(-16,13)/10,-4.2,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
 game.Debris:AddItem(Block,1.1)
 
