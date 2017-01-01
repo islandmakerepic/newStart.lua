@@ -37,10 +37,19 @@ Torso.CanCollide=false
 Torso.Transparency=1
 newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
-local Mat,Colorr='Grass','Dark brown'
+local Mat,Colorr='Grass','Brown'
 
 local r=function() return math.random(-360,360) end
 local camlook=workspace.CurrentCamera.CameraSubject
+local NUM=0-
+coroutine.wrap(function()
+    while true do
+      local pos=Torso.Position
+      wait(0)
+      local p2=Torso.Position
+      NUM=(pos-p2).magnitude
+      end
+    end)()
 
 while wait(0) do
 plr.Character.Humanoid.WalkSpeed=incam and 32 or 16
@@ -55,7 +64,7 @@ end
 if incam then
 
 local Block=Instance.new("Part",workspace.Base)
-Block.Size=Vector3.new(4,4,4)
+Block.Size=Vector3.new(4,4,4+NUM)
 Block.Anchored=true
 Block.Material=Mat
 Block.BrickColor=BrickColor.new(Colorr)
