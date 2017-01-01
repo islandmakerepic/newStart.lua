@@ -2,8 +2,16 @@ local cam=workspace.CurrentCamera
 local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
 
+local spit=function()
+  local chr=inbelly[#inbelly]
+  if chr then
+    chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,0,r()/200)
+    inbelly[#inbelly]=nil
+    end
+  end
 
-local BARREL=Instance.new("Model",plr.Character)
+local BARREL=Instance.new("Model",workspace)
+local COPY=BARREL:Clone()
 
 for i=1,360,36 do
   local part=Instance.new("Part",BARREL)
@@ -43,7 +51,7 @@ mou.KeyDown:connect(function(K)
     if K=='q' then
       spit()
       elseif K=='e' then
-      Eatt=true
+      Eatt=not Eatt
       end
     
 if K=='t' then
@@ -90,17 +98,13 @@ local inbelly={}
 
 local Eat=function(CHARAC)
   CHARAC:MoveTo(BARREL:GetModelCFrame().p)
+  CHARAC.Torso.CFrame=CHARAC.Torso.CFrame*CFrame.new(0,20,0)
+  COPY:clone().Parent=CHARAC
   inbelly[#inbelly+1]=CHARAC
   end
 
 
-local spit=function()
-  local chr=inbelly[#inbelly]
-  if chr then
-    chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,0,r()/200)
-    inbelly[#inbelly]=nil
-    end
-  end
+
 
 local camlook=workspace.CurrentCamera.CameraSubject
 local NUM=0
