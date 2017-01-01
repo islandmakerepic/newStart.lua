@@ -6,7 +6,7 @@ local gui=plr.PlayerGui
 local BARREL=Instance.new("Model",plr.Character)
 
 for i=1,360,36 do
-  local part=Instance.new("Part",Barrel)
+  local part=Instance.new("Part",BARREL)
   part.Size=Vector3.new(36,1,36)
   part.CFrame=CFrame.new(0,1000,0)*CFrame.Angles(0,0,math.rad(i))*CFrame.new(0,0,-18)
   part.Anchored=true
