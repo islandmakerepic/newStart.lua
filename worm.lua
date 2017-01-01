@@ -79,15 +79,16 @@ plr.Character.Humanoid.JumpPower=30
 end
 
 if incam and can then
-
+for i=NUM,0,-0.1 do
 local Block=Instance.new("Part",workspace.Base)
-Block.Size=Vector3.new(4,4,4+NUM)
+Block.Size=Vector3.new(4,4,2)
 Block.Anchored=true
 Block.Material=Mat
 Block.BrickColor=BrickColor.new(Colorr)
     Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)
-Block.CFrame=Torso.CFrame*CFrame.new(math.random(-16,13)/10,-4.2,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
+Block.CFrame=Torso.CFrame*CFrame.new(math.random(-16,13)/10,-4.2,i)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
 game.Debris:AddItem(Block,1.1)
+      end
     workspace.CurrentCamera.CameraSubject=Torso
     else
     workspace.CurrentCamera.CameraSubject=camlook
