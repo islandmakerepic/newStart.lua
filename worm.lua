@@ -15,12 +15,12 @@ local spit=function()
   end
 
 local BARREL=Instance.new("Model",workspace)
-local COPY=BARREL:Clone()
+
 
 for i=1,360,36 do
   local part=Instance.new("Part",BARREL)
   part.Size=Vector3.new(36,100,1)
-  part.CFrame=CFrame.new(0,1000,0)*CFrame.Angles(math.rad(i),0,math.rad(90))*CFrame.new(0,0,-54)
+  part.CFrame=CFrame.new(0,1000,5000)*CFrame.Angles(math.rad(i),0,math.rad(90))*CFrame.new(0,0,-54)
   part.Anchored=true
   part.BrickColor=BrickColor.new'Brown'
   part.Material='Grass'
@@ -33,7 +33,7 @@ for i=1,360,36 do
   closerr.Size=Vector3.new(36,2,54)
   closerr.CFrame=part.CFrame*CFrame.new(0,-50,54/2)
 end
-
+local COPY=BARREL:Clone()
 wait(0.1)
 script.Parent=gui
 
