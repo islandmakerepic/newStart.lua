@@ -37,7 +37,7 @@ Torso.CanCollide=false
 Torso.Transparency=1
 newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
-local Mat,Colorr='Grass','Really brown'
+local Mat,Colorr='Grass','Dark brown'
 
 local r=function() return math.random(-360,360) end
 local camlook=workspace.CurrentCamera.CameraSubject
