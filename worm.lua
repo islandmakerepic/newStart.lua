@@ -9,7 +9,10 @@ local spit=function()
   print(chr)
   print(#inbelly)
   if chr then
-    chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,0,r()/200)
+    chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,1,r()/200)
+    chr.Torso.CFrame=chr.Torso.CFrame*CFrame.Angles(math.rad(r()),0,math.rad(r()))
+    chr.Torso.Velocity=chr.Torso.CFrame.lookVector*30
+    ypcall(function() chr.INMABELLY:Destroy() end)
     inbelly[#inbelly]=nil
     end
   end
@@ -102,7 +105,11 @@ local Mat,Colorr='Grass','Brown'
 local Eat=function(CHARAC)
   CHARAC:MoveTo(BARREL:GetModelCFrame().p)
   CHARAC.Torso.CFrame=CHARAC.Torso.CFrame*CFrame.new(0,20,0)
-  COPY:clone().Parent=CHARAC
+  if not CHARAC:findFirstChild'INMABELLY' then
+  localAAA=COPY:clone()
+    AAA.Parent=CHARAC
+    AAA.Name='INMABELLY'
+    end
   inbelly[#inbelly+1]=CHARAC
   end
 
