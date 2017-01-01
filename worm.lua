@@ -2,6 +2,7 @@ local cam=workspace.CurrentCamera
 local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
 local inbelly={}
+local Torso=plr.Character.Torso:clone()
 local spit=function()
   local chr=inbelly[#inbelly]
   print(chr)
@@ -85,7 +86,7 @@ end
 end
 end)
 
-local Torso=plr.Character.Torso:clone()
+
 local newbase=workspace.Base:clone()
 newbase.Parent=workspace.CurrentCamera
 Torso.Parent=workspace.CurrentCamera
