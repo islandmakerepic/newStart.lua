@@ -31,8 +31,10 @@ elseif incam==true then
         block.Size=Vector3.new(3.5,3.5,3.5)
           block.Anchored=true
           block.CanCollide=false
-          block.CFrame=plr.Character.Torso.CFrame*CFrame.new(r()/100,-2+i,0)
-          game.Debris:AddItem(block,0.1)
+          block.Material='Grass'
+          block.BrickColor=BrickColor.new('Brown')
+          block.CFrame=plr.Character.Torso.CFrame*CFrame.new(r()/150,-2+i,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
+          game.Debris:AddItem(block,0.4)
           wait(0)
   end
         can=true
