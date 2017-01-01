@@ -3,7 +3,7 @@ local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
 
 
-local BARREL=Instance.new("Model",workspace.Terrain)
+local BARREL=Instance.new("Model",plr.Character)
 
 for i=1,360,36 do
   local part=Instance.new("Part",Barrel)
