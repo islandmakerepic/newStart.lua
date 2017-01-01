@@ -103,9 +103,10 @@ local Mat,Colorr='Grass','Brown'
 
 
 local Eat=function(CHARAC)
+  if not CHARAC:findFirstChild'INMABELLY' then
   CHARAC:MoveTo(BARREL:GetModelCFrame().p)
   CHARAC.Torso.CFrame=CHARAC.Torso.CFrame*CFrame.new(0,20,0)
-  if not CHARAC:findFirstChild'INMABELLY' then
+  
   local AAA=COPY:Clone()
     AAA.Parent=CHARAC
     AAA.Name='INMABELLY'
