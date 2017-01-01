@@ -3,13 +3,15 @@ local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
 wait(0.1)
 script.Parent=gui
-
+local r=function() return math.random(-360,360) end
 
 local incam=false
 
 local change=function()
 incam=not incam
 end
+
+local can=false
 
 local mou=plr:GetMouse()
 
@@ -18,10 +20,12 @@ if K=='t' then
 change()
                         
 if incam==false then
+          can=false
 plr.Character.Parent=workspace
         local CF=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)
 plr.Character.Torso.CFrame=CF
 elseif incam==true then 
+      
  for i=1,5 do
   local block=Instance.new("Part",workspace)
         block.Size=Vector3.new(3.5,3.5,3.5)
@@ -31,6 +35,7 @@ elseif incam==true then
           game.Debris:AddItem(block,0.1)
           wait(0)
   end
+        can=true
  plr.Character.Parent=workspace.CurrentCamera
 plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1000,0)
 end
@@ -49,7 +54,7 @@ newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
 local Mat,Colorr='Grass','Brown'
 
-local r=function() return math.random(-360,360) end
+
 local camlook=workspace.CurrentCamera.CameraSubject
 local NUM=0
 coroutine.wrap(function()
@@ -71,7 +76,7 @@ else
 plr.Character.Humanoid.JumpPower=30
 end
 
-if incam then
+if incam and can then
 
 local Block=Instance.new("Part",workspace.Base)
 Block.Size=Vector3.new(4,4,4+NUM)
