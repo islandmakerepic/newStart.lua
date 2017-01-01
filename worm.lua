@@ -22,6 +22,7 @@ local Torso=plr.Character.Torso:clone()
 local newbase=workspace.Base:clone()
 newbase.Parent=workspace.CurrentCamera
 Torso.Parent=workspace.CurrentCamera
+Torso:breakJoints()
 newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
 local Mat,Colorr='Plastic','Really brown'
