@@ -23,7 +23,7 @@ plr.Character.Parent=workspace
 plr.Character.Torso.CFrame=CF
 elseif incam==true then 
  for i=1,5 do
-  local block=Instance.new("Block",workspace)
+  local block=Instance.new("Part",workspace)
         block.Size=Vector3.new(3.5,3.5,3.5)
           block.Anchored=true
           block.CanCollide=false
