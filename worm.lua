@@ -19,7 +19,7 @@ change()
 end
 end)
 
-local Mat,Color='Plastic','Really brown'
+local Mat,Colorr='Plastic','Really brown'
 
 local r=function() return math.random(-360,360) end
 
