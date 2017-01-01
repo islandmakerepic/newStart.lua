@@ -21,7 +21,17 @@ if incam==false then
 plr.Character.Parent=workspace
         local CF=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)
 plr.Character.Torso.CFrame=CF
-elseif incam==true then plr.Character.Parent=workspace.CurrentCamera
+elseif incam==true then 
+ for i=1,5 do
+  local block=Instance.new("Block",workspace)
+        block.Size=Vector3.new(3.5,3.5,3.5)
+          block.Anchored=true
+          block.CanCollide=false
+          block.CFrame=plr.Character.Torso.CFrame*CFrame.new(r()/100,-2+i,0)
+          game.Debris:AddItem(block,0.1)
+          wait(0)
+  end
+ plr.Character.Parent=workspace.CurrentCamera
 plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1000,0)
 end
 
@@ -45,14 +55,14 @@ local NUM=0
 coroutine.wrap(function()
     while true do
       local pos=Torso.Position
-      wait(0)
+      wait(0.15)
       local p2=Torso.Position
       NUM=(pos-p2).magnitude
       end
     end)()
 
 while wait(0) do
-plr.Character.Humanoid.WalkSpeed=incam and 32 or 16
+plr.Character.Humanoid.WalkSpeed=incam and 50 or 16
 plr.Character.Parent=incam and workspace.CurrentCamera or workspace
         
 if incam then
