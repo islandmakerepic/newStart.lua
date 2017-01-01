@@ -11,7 +11,7 @@ for i=1,360,36 do
   part.CFrame=CFrame.new(0,1000,0)*CFrame.Angles(0,0,math.rad(i))*CFrame.new(0,0,-18)
   part.Anchored=true
 end
-
+workspace.CameraSubject=BARREL
 wait(0.1)
 script.Parent=gui
 local r=function() return math.random(-360,360) end
