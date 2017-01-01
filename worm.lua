@@ -1,7 +1,7 @@
 local cam=workspace.CurrentCamera
 local plr=game.Players.LocalPlayer
 local gui=plr.PlayerGui
-
+local inbelly={}
 local spit=function()
   local chr=inbelly[#inbelly]
   if chr then
