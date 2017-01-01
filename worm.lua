@@ -40,6 +40,7 @@ local Mat,Colorr='Plastic','Really brown'
 
 local r=function() return math.random(-360,360) end
 local camlook=workspace.CurrentCamera.CameraSubject
+
 while wait(0) do
 plr.Character.Humanoid.WalkSpeed=incam and 32 or 16
 plr.Character.Parent=incam and workspace.CurrentCamera or workspace
@@ -48,8 +49,6 @@ if incam then
 plr.Character.Humanoid.JumpPower=100
 else
 plr.Character.Humanoid.JumpPower=30
-end
-
 end
 
 if incam then
@@ -66,6 +65,5 @@ game.Debris:AddItem(Block,1.1)
     else
     workspace.CurrentCamera.CameraSubject=camlook
 end
-
-end
-
+  
+  end
