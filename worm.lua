@@ -18,7 +18,7 @@ if K=='t' then
 change()
 if incam==false then
 plr.Character.Torso.CFrame=Torso.CFrame
-elseif incam==true then plr.Character.Torso.CFrame=plr.Character.Torso.CFrame.new(0,1000,0)
+elseif incam==true then plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1000,0)
 end
 end
 end)
