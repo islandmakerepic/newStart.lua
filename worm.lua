@@ -37,7 +37,7 @@ local Block=Instance.new("Part",workspace.Base)
 Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
 Block.Material=Mat
-Block.BrickColor=Colorr
+Block.BrickColor=BrickColor.new(Colorr)
 Block.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
 game.Debris:AddItem(Block,1.1)
 end
