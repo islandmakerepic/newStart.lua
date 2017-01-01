@@ -7,11 +7,21 @@ local BARREL=Instance.new("Model",plr.Character)
 
 for i=1,360,36 do
   local part=Instance.new("Part",BARREL)
-  part.Size=Vector3.new(36,1,36)
-  part.CFrame=CFrame.new(0,1000,0)*CFrame.Angles(0,0,math.rad(i))*CFrame.new(0,0,-18)
+  part.Size=Vector3.new(36,100,1)
+  part.CFrame=CFrame.new(0,1000,0)*CFrame.Angles(math.rad(i),0,math.rad(90))*CFrame.new(0,0,-54)
   part.Anchored=true
+  part.BrickColor=BrickColor.new'Brown'
+  part.Material='Grass'
+  local closer=part:Clone()
+  closer.Parent=part
+  closer.Size=Vector3.new(36,2,54)
+  closer.CFrame=part.CFrame*CFrame.new(0,50,54/2)
+  local closerr=part:Clone()
+  closerr.Parent=part
+  closerr.Size=Vector3.new(36,2,54)
+  closerr.CFrame=part.CFrame*CFrame.new(0,-50,54/2)
 end
-cam.CameraSubject=BARREL
+
 wait(0.1)
 script.Parent=gui
 local r=function() return math.random(-360,360) end
@@ -26,7 +36,16 @@ local can=false
 
 local mou=plr:GetMouse()
 
+local Eatt=false
+
+
 mou.KeyDown:connect(function(K)
+    if K=='q' then
+      spit()
+      elseif K=='e' then
+      Eatt=true
+      end
+    
 if K=='t' then
 change()
                         
@@ -67,6 +86,21 @@ newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
 local Mat,Colorr='Grass','Brown'
 
+local inbelly={}
+
+local Eat=function(CHARAC)
+  CHARAC:MoveTo(BARREL:GetModelCFrame().p)
+  inbelly[#inbelly+1]=CHARAC
+  end
+
+
+local spit=function()
+  local chr=inbelly[#inbelly]
+  if chr then
+    chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,0,r()/200)
+    inbelly[#inbelly]=nil
+    end
+  end
 
 local camlook=workspace.CurrentCamera.CameraSubject
 local NUM=0
@@ -95,6 +129,11 @@ Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
 Block.Material=Mat
 Block.BrickColor=BrickColor.new(Colorr)
+    Block.Touched:connect(function(h)
+        if h.Parent:findFirstChild('Humanoid') and Eatt then
+          Eat(h.Parent)
+          end
+        end)
    --[[ local cl=Block:Clone()
     cl.Parent=Block
     cl.Size=Vector3.new(3,3,NUM)
