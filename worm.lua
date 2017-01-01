@@ -19,7 +19,8 @@ change()
                         
 if incam==false then
 plr.Character.Parent=workspace
-plr.Character.Torso.CFrame=Torso.CFrame
+        local CF=Torso.CFrame
+plr.Character.Torso.CFrame=CF
 elseif incam==true then plr.Character.Parent=workspace.CurrentCamera
 plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1000,0)
 end
