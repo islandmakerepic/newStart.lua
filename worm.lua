@@ -18,11 +18,16 @@ if K=='t' then
 change()
 end
 end)
-
+local Torso=plr.Character.Torso:clone()
+local newbase=workspace.Base:clone()
+newbase.Parent=workspace.CurrentCamera
+Torso.Parent=workspace.CurrentCamera
+newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
+Torso.Anchored=true
 local Mat,Colorr='Plastic','Really brown'
 
 local r=function() return math.random(-360,360) end
-
+local camlook=workspace.CurrentCamera.CameraSubject
 while true do
 local ic=incam
 wait(0)
@@ -33,13 +38,20 @@ plr.Character.Humanoid.WalkSpeed=incam and 32 or 16
 end
 
 if incam then
+    if plr.Character.Torso.CFrame.Y-workspace.Base.CFrame.Y<900 then
+     plr.Character.Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,1001,0)
+      end
 local Block=Instance.new("Part",workspace.Base)
 Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
 Block.Material=Mat
 Block.BrickColor=BrickColor.new(Colorr)
-Block.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
+    Torso.CFrame=plr.Character.Torso.CFrame*CFrame.new(0,-1000,0)
+Block.CFrame=Torso.CFrame*CFrame.new(0,-4,0)*CFrame.Angles(math.rad(r()),math.rad(r()),math.rad(r()))
 game.Debris:AddItem(Block,1.1)
+    workspace.CurrentCamera.CameraSubject=Torso
+    else
+    workspace.CurrentCamera.CameraSubject=camlook
 end
 
 end
