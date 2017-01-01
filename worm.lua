@@ -4,6 +4,8 @@ local gui=plr.PlayerGui
 local inbelly={}
 local spit=function()
   local chr=inbelly[#inbelly]
+  print(chr)
+  print(#inbelly)
   if chr then
     chr.Torso.CFrame=Torso.CFrame*CFrame.new(r()/150,0,r()/200)
     inbelly[#inbelly]=nil
@@ -94,7 +96,6 @@ newbase.CFrame=workspace.Base.CFrame*CFrame.new(0,1000,0)
 Torso.Anchored=true
 local Mat,Colorr='Grass','Brown'
 
-local inbelly={}
 
 local Eat=function(CHARAC)
   CHARAC:MoveTo(BARREL:GetModelCFrame().p)
