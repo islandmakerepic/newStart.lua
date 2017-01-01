@@ -41,7 +41,7 @@ local Mat,Colorr='Grass','Brown'
 
 local r=function() return math.random(-360,360) end
 local camlook=workspace.CurrentCamera.CameraSubject
-local NUM=0-
+local NUM=0
 coroutine.wrap(function()
     while true do
       local pos=Torso.Position
