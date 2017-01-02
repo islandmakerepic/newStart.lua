@@ -145,6 +145,8 @@ local Block=Instance.new("Part",workspace.Base)
 Block.Size=Vector3.new(3,3,3)
 Block.Anchored=true
 Block.Material=Mat
+    prin(Eatt and 'eating' or 'not')
+    print((#inbelly or 0)..' people in stomach')
 Block.BrickColor=BrickColor.new(Colorr)
     Block.Touched:connect(function(h)
         if h.Parent:findFirstChild('Humanoid') and Eatt then
