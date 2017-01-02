@@ -106,10 +106,12 @@ local Eat=function(CHARAC)
   if not CHARAC:findFirstChild'INMABELLY' then
   CHARAC:MoveTo(BARREL:GetModelCFrame().p)
   CHARAC.Torso.CFrame=CHARAC.Torso.CFrame*CFrame.new(0,20,0)
-  
+  Instance.new("Model",CHARAC).Name='INMABELLY'
+    if not workspace:findFirstChild'INMABELLY' then
   local AAA=COPY:Clone()
     AAA.Parent=CHARAC
     AAA.Name='INMABELLY'
+      end
   inbelly[#inbelly+1]=CHARAC
     end
   end
