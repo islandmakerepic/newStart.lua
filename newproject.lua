@@ -28,19 +28,20 @@ FIRE.Color=Color3.fromRGB(i*10,(i*10)-10,(i*10)-20)
 wait(0)
 end
 
-local maketower=function(cf)
+local maketower=function(cf,maxx)
 	local block=Instance.new("Part",workspace.Terrain)
-	block.CFrame=cf
+	block.CFrame=cf*CFrame.new(0,maxx and 620-maxx or 0,0)
 	block.Size=Vector3.new(10,1,3)
 	block.Anchored=true
-for i=1,620,10 do
+for i=1,maxx or 620,10 do
 	block.Size=block.Size+Vector3.new(0,10,0)
 	block.CFrame=cf*CFrame.new(0,(i/2),0)
 	wait()
 end
 end
 wait(2)
-for i=1,360,10 do
+for i=1,350,10 do
 	coroutine.wrap(function() maketower(CFrame.new(base.p)*CFrame.Angles(0,math.rad(i),0)*CFrame.new(0,0,-50)) end)()
 	wait(0.2)
 end
+maketower(CFrame.new(base.p)*CFrame.Angles(0,math.rad(358),0)*CFrame.new(0,0,-50),610)
