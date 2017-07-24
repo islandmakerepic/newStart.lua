@@ -1,4 +1,4 @@
-local p=game.Players.LocalPlayers
+local p=game.Players.LocalPlayer
 local c=p.Character
 local m=p:GetMouse()
 local dmg=function(h)
