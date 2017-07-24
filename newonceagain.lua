@@ -8,9 +8,11 @@ end
 end
 
 local SPIKE=function(spot)
-local size=math.random(5,25)
+local size=math.random(5,20)
 local spik=Instance.new("Part",workspace)
-spik.Size=Vector3.new(size/3,1,size/3)
+  spik.Anchored=true
+  spik.BrickColor=BrickColor.Red()
+spik.Size=Vector3.new(size/4,1,size/4)
 spik.CFrame=spot
 spik.Touched:connect(dmg)
 for i=1,size do
@@ -29,8 +31,8 @@ end
 
 m.Button1Down:connect(function()
 local curr=c.HumanoidRootPart.CFrame
-for i=1,math.random(5,30) do
+for i=1,math.random(5,20) do
 coroutine.wrap(function() SPIKE(curr*CFrame.new(math.random(-50,50),0,math.random(-50,50) ) ) end)()
-wait(math.random(0,10)/10)
+wait(math.random(0,5)/10)
 end
 end)
