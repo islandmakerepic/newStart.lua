@@ -8,7 +8,7 @@ end
 end
 
 local SPIKE=function(spot)
-local size=math.random(5,20)
+local size=math.random(3,15)
 local spik=Instance.new("Part",workspace)
   spik.Anchored=true
   spik.BrickColor=BrickColor.Red()
@@ -31,8 +31,10 @@ end
 
 m.Button1Down:connect(function()
 local curr=c.HumanoidRootPart.CFrame
-for i=1,math.random(5,20) do
+for i=1,math.random(3,15) do
+      for i=1,math.random(5) do
 coroutine.wrap(function() SPIKE(curr*CFrame.new(math.random(-50,50),0,math.random(-50,50) ) ) end)()
+        end
 wait(math.random(0,5)/10)
 end
 end)
