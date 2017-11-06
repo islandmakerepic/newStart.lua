@@ -47,7 +47,6 @@ Distance = Distance - 2.5
   crap.Material = 'Neon'
 crap.CFrame = CFrame.new(woah.CFrame.X,3,woah.CFrame.Z)
 *CFrame.Angles(math.rad(GetRandom()),math.rad(GetRandom()),math.rad(GetRandom()))
-  Instance.new("Fire",crap)
     game.Debris:AddItem(crap,2.25)
       Character.Torso.CFrame = CFrame.new(Character.Torso.CFrame.p,Direction.p)*CFrame.new(0,0,-2.5)
 end
